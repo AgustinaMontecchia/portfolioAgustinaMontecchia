@@ -1,0 +1,23 @@
+// ========================
+// ⚙️ FUNCIONES PERSONALIZADAS
+// ========================
+
+// 📏 Convertir px a rem
+@function rem($px, $base: 16) {
+    @return ($px / $base) * 1rem;
+  }
+  
+  // 🎨 Modificar opacidad de un color
+  @function set-opacity($color, $opacity) {
+    @return rgba($color, $opacity);
+  }
+  
+  // 📐 Clamp de tipografía para tamaños responsivos
+  @function fluid-font($min, $max, $min-width: 320px, $max-width: 1200px) {
+    @return clamp(
+      #{$min},
+      calc(#{$min} + (#{$max} - #{$min}) * ((100vw - #{$min-width}) / (#{$max-width} - #{$min-width}))),
+      #{$max}
+    );
+  }
+  

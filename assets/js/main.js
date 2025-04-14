@@ -1,281 +1,272 @@
-/*==================== MENU SHOW Y HIDDEN ====================*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+document.addEventListener('DOMContentLoaded', () => {
+  /*==================== MENÚ ====================*/
+  const navToggle = document.getElementById('nav-toggle'),
+        navMenu = document.getElementById('nav-menu'),
+        navClose = document.getElementById('nav-close');
 
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
-}
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
-}
+  const dropdown = document.querySelector('.nav__dropdown');
+  const dropdownLink = dropdown?.querySelector('.nav__link');
+  const submenu = dropdown?.querySelector('.nav__submenu');
+  const arrow = dropdown?.querySelector('.nav__arrow');
 
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
-function linkAction(){
-    navMenu.classList.remove('show-menu')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*==================== ACCORDION SKILLS ====================*/
-const skillsContent = document.getElementsByClassName('skills__content'),
-      skillsHeader = document.querySelectorAll('.skills__header')
-
-function toggleSkills(){
-    let itemClass = this.parentNode.className
-    for(let i = 0; i < skillsContent.length; i++){
-        skillsContent[i].className = 'skills__content skills__close'
-    }
-    if(itemClass === 'skills__content skills__close'){
-        this.parentNode.className = 'skills__content skills__open'
-    }
-}
-skillsHeader.forEach((el) => el.addEventListener('click', toggleSkills))
-
-/*==================== QUALIFICATION TABS ====================*/
-const tabs = document.querySelectorAll('[data-target]'),
-      tabContents = document.querySelectorAll('[data-content]')
-
-tabs.forEach(tab =>{
-    tab.addEventListener('click', () =>{
-        const target = document.querySelector(tab.dataset.target)
-        tabContents.forEach(tc => tc.classList.remove('qualification__active'))
-        target.classList.add('qualification__active')
-        tabs.forEach(t => t.classList.remove('qualification__active'))
-        tab.classList.add('qualification__active')
-    })
-})
-
-/*==================== SERVICES MODAL ====================*/
-const modalViews = document.querySelectorAll('.services__modal'),
-      modalBtns = document.querySelectorAll('.services__button'),
-      modalCloses = document.querySelectorAll('.services__modal-close')
-
-let modal = function(modalClick){
-    modalViews[modalClick].classList.add('active-modal')
-}
-modalBtns.forEach((btn, i) => btn.addEventListener('click', () => modal(i)))
-modalCloses.forEach(close => close.addEventListener('click', () => {
-    modalViews.forEach(view => view.classList.remove('active-modal'))
-}))
-
-/*==================== CERTIFICADOS MODAL ====================*/
-const certModalViews = document.querySelectorAll('.qualification__modal'),
-      certModalBtns = document.querySelectorAll('.qualification__button-cert'),
-      certModalCloses = document.querySelectorAll('.qualification__modal-close')
-
-let showCertModal = function(modalClick){
-    certModalViews[modalClick].classList.add('active-modal')
-}
-
-certModalBtns.forEach((btn, i) => {
-    btn.addEventListener('click', () => {
-        showCertModal(i)
-    })
-})
-
-certModalCloses.forEach((close) => {
-    close.addEventListener('click', () => {
-        certModalViews.forEach((modal) => {
-            modal.classList.remove('active-modal')
-        })
-    })
-})
-
-// PORTFOLIO Swiper
-let swiperPortfolio = new Swiper('.portfolio__container', {
-  cssMode: true,
-  loop: true,
-  navigation: {
-    nextEl: '.swiper-button-next-portfolio',
-    prevEl: '.swiper-button-prev-portfolio',
-  },
-  pagination: {
-    el: '.swiper-pagination-portfolio',
-    clickable: true,
-  },
-});
-
-// TESTIMONIALES Swiper
-let swiperTestimonial = new Swiper('.testimonial__container', {
-  loop: true,
-  grabCursor: true,
-  spaceBetween: 48,
-  pagination: {
-    el: '.swiper-pagination-testimonial',
-    clickable: true,
-    dynamicBullets: true,
-  },
-  breakpoints: {
-    568: { slidesPerView: 2 }
+  if (navToggle) {
+    navToggle.addEventListener('click', e => {
+      e.stopPropagation();
+      navMenu.classList.toggle('show-menu');
+    });
   }
-});
 
+  if (navClose) {
+    navClose.addEventListener('click', () => {
+      navMenu.classList.remove('show-menu');
+    });
+  }
 
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll('section[id]');
-
-function scrollActive(){
-  const scrollY = window.pageYOffset;
-
-  sections.forEach(current => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50;
-    const sectionId = current.getAttribute('id');
-    const link = document.querySelector(".nav__link[href='#" + sectionId + "']");
-
-    if(link){
-      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-        link.classList.add('active-link');
-      } else {
-        link.classList.remove('active-link');
+  document.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        navMenu.classList.remove('show-menu');
+        submenu?.classList.remove('show-submenu');
+        arrow?.classList.remove('arrow-rotated');
       }
+    });
+  });
+
+  document.addEventListener('click', e => {
+    const isClickInside = navMenu.contains(e.target) || navToggle.contains(e.target);
+    if (!isClickInside && navMenu.classList.contains('show-menu')) {
+      navMenu.classList.remove('show-menu');
     }
   });
-}
-window.addEventListener('scroll', scrollActive);
 
+  if (dropdownLink && submenu && arrow) {
+    dropdownLink.addEventListener('click', e => {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        submenu.classList.toggle('show-submenu');
+        arrow.classList.toggle('arrow-rotated');
+      }
+    });
+  }
 
+  /*==================== SKILLS ====================*/
+  const skillsContent = document.getElementsByClassName('skills__content');
+  const skillsHeader = document.querySelectorAll('.skills__header');
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/
-function scrollHeader(){
-    const nav = document.getElementById('header')
-    if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
-}
-window.addEventListener('scroll', scrollHeader)
-
-/*==================== SHOW SCROLL UP ====================*/
-function scrollUp(){
-    const scrollUp = document.getElementById('scroll-up');
-    if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
-}
-window.addEventListener('scroll', scrollUp)
-
-/*==================== SHOW SOCIAL BANNER ONLY IN HOME ====================*/
-const banner = document.getElementById('social-banner');
-const homeSection = document.getElementById('home');
-
-function toggleBannerOnScroll() {
-    const homeRect = homeSection.getBoundingClientRect();
-    
-    if (homeRect.top <= window.innerHeight && homeRect.bottom >= 0) {
-        banner.classList.add('show');
-    } else {
-        banner.classList.remove('show');
+  function toggleSkills() {
+    let itemClass = this.parentNode.className;
+    for (let i = 0; i < skillsContent.length; i++) {
+      skillsContent[i].className = 'skills__content skills__close';
     }
-}
-window.addEventListener('scroll', toggleBannerOnScroll);
-document.addEventListener('DOMContentLoaded', toggleBannerOnScroll)
+    if (itemClass === 'skills__content skills__close') {
+      this.parentNode.className = 'skills__content skills__open';
+    }
+  }
 
-/*==================== DARK / LIGHT / AGUS THEME ====================*/
-const themeButton = document.getElementById('theme-button')
-const agusThemeButton = document.getElementById('agus-theme-button');
-const darkTheme = 'dark-theme'
-const iconTheme = 'uil-sun'
-const agusThemeClass = 'agus-theme'
+  skillsHeader.forEach(el => el.addEventListener('click', toggleSkills));
 
-// Guardados
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
-const selectedAgusTheme = localStorage.getItem('selected-agus-theme')
+  /*==================== TABS ====================*/
+  const tabs = document.querySelectorAll('[data-target]');
+  const tabContents = document.querySelectorAll('[data-content]');
 
-// Funciones para guardar
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-sun' : 'uil-moon'
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = document.querySelector(tab.dataset.target);
+      tabContents.forEach(tc => tc.classList.remove('qualification__active'));
+      tabs.forEach(t => t.classList.remove('qualification__active'));
+      target.classList.add('qualification__active');
+      tab.classList.add('qualification__active');
+    });
+  });
 
-// Cargar tema guardado
-if (selectedTheme) {
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'uil-sun' ? 'add' : 'remove'](iconTheme)
-}
-if (selectedAgusTheme === 'true') {
-  document.body.classList.add(agusThemeClass)
-}
+  /*==================== MODALES ====================*/
+  const modalViews = document.querySelectorAll('.services__modal'),
+        modalBtns = document.querySelectorAll('.services__button'),
+        modalCloses = document.querySelectorAll('.services__modal-close');
 
-// Activar modo Agus
-agusThemeButton.addEventListener('click', () => {
-  document.body.classList.remove(darkTheme)
-  themeButton.classList.remove(iconTheme)
-  document.body.classList.toggle(agusThemeClass)
-  localStorage.setItem('selected-agus-theme', document.body.classList.contains(agusThemeClass))
-  localStorage.setItem('selected-theme', 'light')
-  localStorage.setItem('selected-icon', 'uil-sun')
-})
+  modalBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      modalViews[i].classList.add('active-modal');
+    });
+  });
 
-// Activar modo oscuro
-themeButton.addEventListener('click', () => {
-  document.body.classList.remove(agusThemeClass)
-  document.body.classList.toggle(darkTheme)
-  themeButton.classList.toggle(iconTheme)
-  localStorage.setItem('selected-theme', getCurrentTheme())
-  localStorage.setItem('selected-icon', getCurrentIcon())
-  localStorage.setItem('selected-agus-theme', false)
-})
+  modalCloses.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.services__modal').classList.remove('active-modal');
+    });
+  });
 
+  modalViews.forEach(modal => {
+    modal.addEventListener('click', e => {
+      if (!e.target.closest('.services__modal-content')) {
+        modal.classList.remove('active-modal');
+      }
+    });
+  });
 
-/*==================== FORM CONFIRMATION MESSAGE ====================*/
-const form = document.getElementById('contact-form');
-const message = document.getElementById('form-message');
-form.addEventListener('submit', async (e) => {
+  /*==================== CERTIFICADOS ====================*/
+  const certModals = document.querySelectorAll('.qualification__modal'),
+        certBtns = document.querySelectorAll('.qualification__button-cert'),
+        certCloses = document.querySelectorAll('.qualification__modal-close');
+
+  certBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      certModals[i].classList.add('active-modal');
+    });
+  });
+
+  certCloses.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.qualification__modal').classList.remove('active-modal');
+    });
+  });
+
+  certModals.forEach(modal => {
+    modal.addEventListener('click', e => {
+      if (!e.target.closest('.qualification__modal-content')) {
+        modal.classList.remove('active-modal');
+      }
+    });
+  });
+
+  /*==================== SWIPER ====================*/
+  new Swiper('.portfolio__container', {
+    cssMode: true,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next-portfolio',
+      prevEl: '.swiper-button-prev-portfolio',
+    },
+    pagination: {
+      el: '.swiper-pagination-portfolio',
+      clickable: true,
+    },
+  });
+
+  new Swiper('.testimonial__container', {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: 48,
+    pagination: {
+      el: '.swiper-pagination-testimonial',
+      clickable: true,
+      dynamicBullets: true,
+    },
+    breakpoints: {
+      568: { slidesPerView: 2 }
+    }
+  });
+
+  /*==================== SCROLL SECTIONS ACTIVE ====================*/
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+    sections.forEach(current => {
+      const sectionTop = current.offsetTop - 50;
+      const sectionHeight = current.offsetHeight;
+      const sectionId = current.getAttribute('id');
+      const link = document.querySelector(`.nav__link[href="#${sectionId}"]`);
+      if (link) {
+        link.classList.toggle('active-link', scrollY > sectionTop && scrollY <= sectionTop + sectionHeight);
+      }
+    });
+  });
+
+  /*==================== HEADER BG ====================*/
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scroll-header', window.scrollY >= 80);
+    document.getElementById('scroll-up')?.classList.toggle('show-scroll', window.scrollY >= 560);
+  });
+
+  /*==================== SOCIAL BANNER ====================*/
+  const banner = document.getElementById('social-banner');
+  const home = document.getElementById('home');
+  if (home && banner) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => banner.classList.toggle('show', entry.isIntersecting));
+    }, { threshold: 0.3 });
+    observer.observe(home);
+  }
+
+  /*==================== THEMES ====================*/
+  const themeBtn = document.getElementById('theme-button');
+  const agusBtn = document.getElementById('agus-theme-button');
+  const darkTheme = 'dark-theme';
+  const agusTheme = 'agus-theme';
+
+  const selectedTheme = localStorage.getItem('selected-theme');
+  const selectedIcon = localStorage.getItem('selected-icon');
+  const selectedAgusTheme = localStorage.getItem('selected-agus-theme');
+
+  if (selectedTheme) {
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+    themeBtn?.classList[selectedIcon === 'uil-sun' ? 'add' : 'remove']('uil-sun');
+  }
+  if (selectedAgusTheme === 'true') {
+    document.body.classList.add(agusTheme);
+  }
+
+  agusBtn?.addEventListener('click', () => {
+    document.body.classList.remove(darkTheme);
+    themeBtn?.classList.remove('uil-sun');
+    document.body.classList.toggle(agusTheme);
+    localStorage.setItem('selected-agus-theme', document.body.classList.contains(agusTheme));
+    localStorage.setItem('selected-theme', 'light');
+    localStorage.setItem('selected-icon', 'uil-sun');
+  });
+
+  themeBtn?.addEventListener('click', () => {
+    document.body.classList.remove(agusTheme);
+    document.body.classList.toggle(darkTheme);
+    themeBtn.classList.toggle('uil-sun');
+    localStorage.setItem('selected-theme', document.body.classList.contains(darkTheme) ? 'dark' : 'light');
+    localStorage.setItem('selected-icon', themeBtn.classList.contains('uil-sun') ? 'uil-sun' : 'uil-moon');
+    localStorage.setItem('selected-agus-theme', false);
+  });
+
+  /*==================== FORM ====================*/
+  const form = document.getElementById('contact-form');
+  const message = document.getElementById('form-message');
+  form?.addEventListener('submit', async e => {
     e.preventDefault();
     const formData = new FormData(form);
     const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { 'Accept': 'application/json' }
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
     });
     if (response.ok) {
-        form.reset();
-        message.style.display = 'block';
-    }
-});
-
-/*==================== FADE IN ON SCROLL ====================*/
-const fadeElements = document.querySelectorAll('.fade-in-up');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
+      form.reset();
+      message.style.display = 'block';
     }
   });
-}, { threshold: 0.1 });
-fadeElements.forEach(el => observer.observe(el));
 
-/*==================== SCROLL REVEAL ANIMATION ====================*/
-/*==================== SCROLL REVEAL ANIMATION ====================*/
-const sr = ScrollReveal({
-  distance: '50px',
-  duration: 1000,
-  delay: 200,
-  reset: false,
-});
+  /*==================== FADE IN ====================*/
+  const fadeElements = document.querySelectorAll('.fade-in-up');
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('in-view'));
+  }, { threshold: 0.1 });
+  fadeElements.forEach(el => fadeObserver.observe(el));
 
-// Animación de aparición para texto e imagen
-sr.reveal('.home__data', { origin: 'left' });
-sr.reveal('.home__img', { origin: 'right' });
+  /*==================== SCROLL REVEAL ====================*/
+  ScrollReveal().reveal('.home__data', { origin: 'left', distance: '50px', duration: 1000, delay: 200 });
+  ScrollReveal().reveal('.home__img', { origin: 'right', distance: '50px', duration: 1000, delay: 200 });
 
-/*==================== CAMBIO DE IDIOMA ====================*/
-const languageButton = document.getElementById('language-button');
-let currentLang = localStorage.getItem('selected-lang') || 'es';
+  /*==================== CAMBIO DE IDIOMA ====================*/
+  const languageButton = document.getElementById('language-button');
+  let currentLang = localStorage.getItem('selected-lang') || 'es';
 
-function updateLanguage(lang) {
-  document.querySelectorAll('[data-es], [data-en]').forEach(el => {
-    el.innerHTML = el.getAttribute(`data-${lang}`);
+  function updateLanguage(lang) {
+    document.querySelectorAll('[data-es], [data-en]').forEach(el => {
+      el.innerHTML = el.getAttribute(`data-${lang}`) || el.innerHTML;
+    });
+    localStorage.setItem('selected-lang', lang);
+    currentLang = lang;
+  }
+
+  languageButton?.addEventListener('click', () => {
+    updateLanguage(currentLang === 'es' ? 'en' : 'es');
   });
-  localStorage.setItem('selected-lang', lang);
-  currentLang = lang;
-}
 
-languageButton.addEventListener('click', () => {
-  const newLang = currentLang === 'es' ? 'en' : 'es';
-  updateLanguage(newLang);
-});
-
-// Ejecutar al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
   updateLanguage(currentLang);
 });

@@ -1,0 +1,58 @@
+// ====================
+// 💡 PROYECTO EN MENTE
+// ====================
+.project__container {
+  display: grid;
+  grid-template-columns: 1fr auto; // 📍 auto para que la imagen no estire tanto
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 2rem; // ajustá según el espacio que quieras
+}
+
+.project__bg {
+  background-color: var(--container-color); // Adaptado al tema activo
+  padding-bottom: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s ease;
+}
+
+.project__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.75rem;
+  color: var(--title-color);
+  text-align: center;
+}
+
+.project__subtitle {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.75rem;
+  color: var(--title-color);
+  text-align: start;
+}
+
+.project__description {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+  text-align: start;
+  line-height: 1.6;
+}
+
+.project__img {
+  max-width: 250px;
+  height: auto;
+  justify-self: end;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.project__data {
+  text-align: left;
+  justify-self: start;
+  max-width: 500px;
+}
+

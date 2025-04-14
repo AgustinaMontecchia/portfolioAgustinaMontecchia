@@ -1,0 +1,33 @@
+// ====================
+// 🧩 MIXINS GENERALES
+// ====================
+// 🎯 Centrado absoluto
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 💫 Transición rápida
+@mixin transition($props...) {
+  transition: $props 0.3s ease;
+}
+
+// 🟣 Botón básico (compatible con cambio de temas)
+@mixin button-basic {
+  display: inline-block;
+  background-color: var(--first-color); // ✅ Usamos la variable CSS, no Sass
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: $font-medium;
+  text-align: center;
+  cursor: pointer;
+  @include transition(all);
+}
+
+// 🌟 Animación "beat"
+@mixin beat-animation {
+  animation: beat 1.5s infinite;
+}

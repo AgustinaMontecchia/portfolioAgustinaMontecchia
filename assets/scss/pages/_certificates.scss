@@ -1,0 +1,123 @@
+// ====================
+// 📄 CERTIFICADOS
+// ====================
+
+.certificados .qualification__data {
+  min-height: 130px;
+  position: relative;
+}
+
+.certificados .qualification__line {
+  position: absolute;
+  top: 1rem;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: var(--first-color);
+}
+
+
+
+.qualification__button-cert {
+  margin-top: 0.5rem;
+  font-size: var(--small-font-size);
+  color: var(--first-color);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.certificados .qualification__sections {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.qualification__tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.qualification__button {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  color: var(--text-color);
+
+  &:hover,
+  &.qualification__active {
+    color: var(--first-color);
+  }
+}
+
+.qualification__icon {
+  font-size: 1.8rem;
+  margin-right: var(--mb-0-25);
+  color: var(--first-color);
+}
+
+.qualification__data {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+  position: relative;
+
+  > div:first-child {
+    padding-inline: 0 1.5rem;
+    text-align: right;
+  }
+
+  > div:nth-child(3) {
+    padding-inline: 1.5rem 0;
+    text-align: left;
+  }
+}
+
+.qualification__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+
+.qualification__subtitle {
+  display: inline-block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--text-color-light);
+}
+
+.qualification__calendar {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.qualification__heart {
+  font-size: 1.1rem;
+  color: var(--first-color);
+  display: inline-block;
+  text-align: center;
+  width: 13px;
+  height: 13px;
+  line-height: 13px;
+  position: relative;
+  left: -1.5px;
+}
+
+.qualification__line {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: var(--first-color);
+  transform: translate(0, 0);
+  margin: 0 auto;
+}
+
+.qualification [data-content] {
+  display: none;
+}
+
+.qualification__active[data-content] {
+  display: block;
+}

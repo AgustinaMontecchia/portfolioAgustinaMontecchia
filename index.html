@@ -21,7 +21,11 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      
     />
+    <!-- Fuentes Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!--==================== SWIPER CSS ====================-->
@@ -29,240 +33,106 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
+    
+
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/scss/main.css" />
 
     <title
       data-es="Agustina Montecchia | Desarrolladora Frontend"
       data-en="Agustina Montecchia | Frontend Developer"
     >
-      Agustina Montecchia | Desarrolladora Frontend
     </title>
   </head>
 
   <body>
     <header class="header" id="header">
       <nav class="nav container">
+        <!-- Menú hamburguesa, solo visible en pantallas pequeñas -->
+        <i class="uil uil-bars nav__toggle" id="nav-toggle"></i>
+    
+        <!-- Logo centrado -->
         <a href="#" class="nav__logo">
           Agustina
-          <span data-es="Frontend Developer" data-en="Frontend Developer"
-            >Frontend Developer</span
-          >
+          <span>Frontend Developer</span>
         </a>
-
+    
+        <!-- Menú completo, solo visible en pantallas grandes -->
         <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list grid">
-            <li>
-              <a href="#home" class="nav__link">
-                
-                <span data-es="Inicio" data-en="Home">Inicio</span>
-              </a>
-            </li>
-            <li>
-              <a href="#about" class="nav__link">
-                
-                <span data-es="Mi historia" data-en="My story"
-                  >Mi historia</span
-                >
-              </a>
-            </li>
-
-            <!-- DROPDOWN SOBRE MÍ -->
+          <ul class="nav__list">
+            <li><a href="#home" class="nav__link"><span data-es="Inicio" data-en="Home">Inicio</span></a></li>
+            <li><a href="#about" class="nav__link"><span data-es="Mi historia" data-en="My story">Mi historia</span></a></li>
             <li class="nav__dropdown">
               <a href="#" class="nav__link">
-                
                 <span data-es="Sobre mí" data-en="About me">Sobre mí</span>
                 <i class="uil uil-angle-down nav__arrow"></i>
               </a>
               <ul class="nav__submenu">
-                <li>
-                  <a
-                    href="#mi-camino"
-                    class="nav__link"
-                    data-es="Mi camino"
-                    data-en="My journey"
-                    >Mi camino</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#curiosidades"
-                    class="nav__link"
-                    data-es="Curiosidades"
-                    data-en="Fun facts"
-                    >Curiosidades</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#valores"
-                    class="nav__link"
-                    data-es="Valores"
-                    data-en="Values"
-                    >Valores</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#proceso"
-                    class="nav__link"
-                    data-es="Proceso"
-                    data-en="Process"
-                    >Proceso</a
-                  >
-                </li>
+                <li><a href="#mi-camino" class="nav__link" data-es="Mi camino" data-en="My journey"></a></li>
+                <li><a href="#curiosidades" class="nav__link" data-es="Curiosidades" data-en="Fun facts"></a></li>
+                <li><a href="#valores" class="nav__link" data-es="Valores" data-en="Values"></a></li>
+                <li><a href="#proceso" class="nav__link" data-es="Proceso" data-en="Process"></a></li>
               </ul>
             </li>
-
-            <li>
-              <a href="#skills" class="nav__link">
-                <span data-es="Habilidades" data-en="Skills">Habilidades</span>
-              </a>
-            </li>
-            <li>
-              <a href="#certificados" class="nav__link">
-                
-                <span data-es="Certificados" data-en="Certificates"
-                  >Certificados</span
-                >
-              </a>
-            </li>
-            <li>
-              <a href="#services" class="nav__link">
-                
-                <span data-es="Servicios" data-en="Services">Servicios</span>
-              </a>
-            </li>
-            <li>
-              <a href="#portfolio" class="nav__link">
-                
-                <span data-es="Portfolio" data-en="Portfolio">Portfolio</span>
-              </a>
-            </li>
-            <li>
-              <a href="#contact" class="nav__link">
-                
-                <span data-es="Contactame" data-en="Contact me"
-                  >Contactame</span
-                >
-              </a>
-            </li>
+            <li><a href="#skills" class="nav__link"><span data-es="Habilidades" data-en="Skills"></span></a></li>
+            <li><a href="#certificados" class="nav__link"><span data-es="Certificados" data-en="Certificates"></span></a></li>
+            <li><a href="#services" class="nav__link"><span data-es="Servicios" data-en="Services"></span></a></li>
+            <li><a href="#portfolio" class="nav__link"><span>Portfolio</span></a></li>
+            <li><a href="#contact" class="nav__link"><span data-es="Contacto" data-en="Contact"></span></a></li>
           </ul>
           <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
-
+    
+        <!-- Botones de temas y lenguaje a la derecha -->
         <div class="nav__btns">
-          <i
-            class="uil uil-moon change-theme"
-            id="theme-button"
-            title="Modo oscuro"
-          ></i>
-          <i
-            class="uil uil-flower change-agus-theme"
-            id="agus-theme-button"
-            title="Modo Agus"
-          ></i>
-          <i
-            class="uil uil-globe change-language"
-            id="language-button"
-            title="Cambiar idioma"
-          >
-
-          </i>
-
-
+          <i class="uil uil-moon change-theme" id="theme-button" title="Modo oscuro"></i>
+          <i class="uil uil-flower change-agus-theme" id="agus-theme-button" title="Modo Agus"></i>
+          <i class="uil uil-globe change-language" id="language-button" title="Cambiar idioma"></i>
         </div>
       </nav>
     </header>
+    
 
     <main>
-      <!--==================== HOME ====================-->
       <section class="home section" id="home">
-        
-
         <div class="home__container container grid">
-          <div class="home__content grid">
-            <!--==================== SOCIAL MINI BOX ====================-->
-            <div class="home__social-banner fade-in-up" id="social-banner">
-              <p
-                data-es="Agus está lista para mostrarte su trabajo"
-                data-en="Agus is ready to show you her work"
-              >
-                Agus está lista para mostrarte su trabajo
-              </p>
-              <div class="home__social-icons">
-                <a
-                  href="https://www.linkedin.com/in/agustinamontecchia/"
-                  target="_blank"
-                  class="banner__icon"
-                >
-                  <i class="uil uil-linkedin-alt"></i>
-                </a>
-                <a
-                  href="https://github.com/AgustinaMontecchia"
-                  target="_blank"
-                  class="banner__icon"
-                >
-                  <i class="uil uil-github-alt"></i>
-                </a>
-              </div>
-            </div>
-
-            <!--==================== FOTO PERFIL ====================-->
-            <div class="home__img">
-              <img
-                src="assets/img/perfil.png"
-                alt="Foto de Agustina"
-                class="custom-blob-img"
-              />
-            </div>
-
-            <!--==================== TEXTO Y BOTÓN ====================-->
-            <div class="home__data">
-              <h1
-                class="home__title"
-                data-es="Hola, soy Agustina"
-                data-en="Hi, I'm Agustina"
-              >
-                Hola, soy Agustina
-              </h1>
-
-              <h2
-                class="home__subtitle"
-                data-es="Desarrolladora Frontend con alma tranquila y mente curiosa"
-                data-en="Frontend developer with a calm soul and curious mind"
-              >
-                Desarrolladora Frontend con alma tranquila y mente curiosa
-              </h2>
-
-              <p
-                class="home__description"
-                data-es="Me enamoré del código porque me permite crear sin moverme de mi rincón favorito del mundo: mi casa."
-                data-en="I fell in love with code because it lets me create without leaving my favorite corner of the world: my home."
-              >
-                Me enamoré del código porque me permite crear sin moverme de mi
-                rincón favorito del mundo: mi casa.
-              </p>
-
-              <p
-                class="home__phrase fade-in-up"
-                data-es="No me rendí hasta encontrar lo que me hace feliz. <span>El código me encontró a mí.</span>"
-                data-en="I didn’t give up until I found what makes me happy. <span>Code found me.</span>"
-              >
-                No me rendí hasta encontrar lo que me hace feliz.
-                <span>El código me encontró a mí.</span>
-              </p>
-
-              <a href="#contact" class="button button--flex">
-                <span data-es="Contactame" data-en="Contact me"
-                  >Contactame</span
-                >
-                <i class="uil uil-comment-alt-dots button__icon"></i>
-              </a>
-            </div>
+          
+          <!-- Imagen a la izquierda -->
+          <div class="home__img">
+            <img src="assets/img/perfil.png" alt="Foto de Agustina" class="custom-blob-img" />
           </div>
-          </section>
+      
+          <!-- Texto a la derecha -->
+          <div class="home__data">
+            <h1 class="home__title" data-es="Hola, soy Agustina" data-en="Hi, I'm Agustina">
+            </h1>
+      
+            <h2 class="home__subtitle"
+                data-es="Desarrolladora Frontend con alma tranquila y mente curiosa"
+                data-en="Frontend developer with a calm soul and curious mind">
+            </h2>
+      
+            <p class="home__description"
+               data-es="Me enamoré del código porque me permite crear sin moverme de mi rincón favorito del mundo: mi casa."
+               data-en="I fell in love with code because it lets me create without leaving my favorite corner of the world: my home.">
+            </p>
+      
+            <p class="home__phrase fade-in-up"
+               data-es="No me rendí hasta encontrar lo que me hace feliz. <span>El código me encontró a mí.</span>"
+               data-en="I didn’t give up until I found what makes me happy. <span>Code found me.</span>">
+              
+            </p>
+      
+            <a href="#contact" class="button button--flex">
+              <span data-es="Contactame" data-en="Contact me"></span>
+              <i class="uil uil-comment-alt-dots button__icon"></i>
+            </a>
+          </div>
+      
+        </div>
+      </section>
+      
           <!--==================== BOTÓN SCROLL ABAJO ====================-->
           <section>
             <div class="home__scroll">
@@ -273,7 +143,6 @@
                 data-es="Deslizá hacia abajo"
                 data-en="Scroll down"
               >
-                Deslizá hacia abajo
               </span>
               <i class="uil uil-arrow-down home__scroll-arrow"></i>
             </a>
@@ -287,7 +156,7 @@
       <!--==================== ABOUT ====================-->
       <section class="about section" id="about">
         <h2 class="section__title" data-es="Mi historia" data-en="My story">
-          Mi historia
+          
         </h2>
 
         <span
@@ -295,10 +164,7 @@
           data-es="Me formé como desarrolladora frontend en CoderHouse, donde realicé varios proyectos aplicando tecnologías como HTML, CSS, JavaScript Y React. Disfruto de convertir ideas en sitios funcionales y visualmente agradables"
           data-en="I trained as a frontend developer at CoderHouse, where I built several projects using HTML, CSS, JavaScript and React. I enjoy turning ideas into functional and visually appealing websites."
         >
-          Me formé como desarrolladora frontend en CoderHouse, donde realicé
-          varios proyectos aplicando tecnologías como HTML, CSS, JavaScript Y
-          React. Disfruto de convertir ideas en sitios funcionales y visualmente
-          agradables
+          
         </span>
 
         <div class="about__container container grid">
@@ -309,11 +175,7 @@
               data-es="Nací en Trelew, Chubut, y hace 8 años vivo en Córdoba. Soy una persona muy tranquila, hogareña, de esas que disfrutan más una tarde de series que una noche de fiesta. Siempre me costó lo social, pero eso nunca me detuvo para seguir buscando mi lugar en el mundo."
               data-en="I was born in Trelew, Chubut, and I've been living in Córdoba for 8 years. I'm a calm, home-loving person who enjoys a cozy afternoon with a series more than a night out. Social situations were always hard for me, but that never stopped me from searching for my place in the world."
             >
-              Nací en Trelew, Chubut, y hace 8 años vivo en Córdoba. Soy una
-              persona muy tranquila, hogareña, de esas que disfrutan más una
-              tarde de series que una noche de fiesta. Siempre me costó lo
-              social, pero eso nunca me detuvo para seguir buscando mi lugar en
-              el mundo.
+              
             </section>
 
             <section
@@ -321,10 +183,7 @@
               data-es="Probé muchas cosas: estudié contabilidad, fui azafata (¡me faltaron solo las prácticas!), hice cursos de e-commerce, asesoría de imagen y marketing… pero nada terminaba de hacerme sentir en casa."
               data-en="I tried many things: I studied accounting, became a flight attendant (I only missed the practices!), took courses in e-commerce, image consulting and marketing… but nothing truly felt like home."
             >
-              Probé muchas cosas: estudié contabilidad, fui azafata (¡me
-              faltaron solo las prácticas!), hice cursos de e-commerce, asesoría
-              de imagen y marketing… pero nada terminaba de hacerme sentir en
-              casa.
+              
             </section>
 
             <section
@@ -332,10 +191,7 @@
               data-es="Hasta que un día, mi novio me propuso probar programación. Ahí todo cambió. Me di cuenta de que podía pasar horas programando y disfrutándolo, que me encantaba aprender algo nuevo y resolver problemas desde la compu, en mi lugar seguro."
               data-en="Until one day, my boyfriend suggested I try programming. That changed everything. I realized I could spend hours coding and loving it, that I enjoyed learning new things and solving problems from my computer — my safe space."
             >
-              Hasta que un día, mi novio me propuso probar programación. Ahí
-              todo cambió. Me di cuenta de que podía pasar horas programando y
-              disfrutándolo, que me encantaba aprender algo nuevo y resolver
-              problemas desde la compu, en mi lugar seguro.
+              
             </section>
 
             <section
@@ -343,10 +199,7 @@
               data-es="Hoy mi sueño es simple: quiero tener mi independencia, conseguir trabajo como desarrolladora Frontend y construir mi hogar, con mi pareja, mi gata Emma (que tiene 7 años), y todos los sueños que tengo por delante 💻🐾🌸"
               data-en="Today my dream is simple: I want to be independent, get a job as a frontend developer, and build my home — with my partner, my cat Emma (she's 7), and all the dreams I have ahead 💻🐾🌸"
             >
-              Hoy mi sueño es simple: quiero tener mi independencia, conseguir
-              trabajo como desarrolladora Frontend y construir mi hogar, con mi
-              pareja, mi gata Emma (que tiene 7 años), y todos los sueños que
-              tengo por delante 💻🐾🌸
+              
             </section>
 
             <div class="about__info">
@@ -357,7 +210,7 @@
                   data-es="años de <br/>experiencia"
                   data-en="years of <br/>experience"
                 >
-                  años de<br />experiencia
+                  
                 </span>
               </div>
               <div>
@@ -367,7 +220,7 @@
                   data-es="proyectos<br />realizados"
                   data-en="projects<br />completed"
                 >
-                  proyectos<br />realizados
+                  
                 </span>
               </div>
               <div>
@@ -377,7 +230,7 @@
                   data-es="certificados<br />obtenidos"
                   data-en="certificates<br />earned"
                 >
-                  certificados<br />obtenidos
+                  
                 </span>
               </div>
             </div>
@@ -388,9 +241,8 @@
                 href="assets/pdf/Agustina-Cv.pdf"
                 class="button button--flex"
               >
-                <span data-es="Descargar CV" data-en="Download CV"
-                  >Descargar CV</span
-                >
+                <span data-es="Descargar CV" data-en="Download CV">
+                </span>
                 <i class="uil uil-import button__icon"></i>
               </a>
             </div>
@@ -401,19 +253,14 @@
       <!--==================== MI CAMINO ====================-->
       <section class="timeline section" id="mi-camino">
         <h2 class="section__title" data-es="Mi Camino" data-en="My Journey">
-          Mi Camino
         </h2>
         <span
           class="section__subtitle"
           data-es="Cómo llegué hasta acá"
-          data-en="How I got here"
-        >
-          Cómo llegué hasta acá
+          data-en="How I got here">
         </span>
 
-        <div class="timeline__container container">
-          <div class="timeline__line"></div>
-
+        <div class="timeline__container container">          
           <div class="timeline__item" data-aos="fade-up" data-aos-delay="100">
             <i class="uil uil-book-open timeline__icon"></i>
             <div class="timeline__content">
@@ -423,7 +270,6 @@
                 data-es="Terminé la secundaria con título en contabilidad y derecho."
                 data-en="Finished high school with a degree in accounting and law."
               >
-                Terminé la secundaria con título en contabilidad y derecho.
               </p>
             </div>
           </div>
@@ -435,10 +281,7 @@
               <p
                 class="timeline__text"
                 data-es="Intenté estudiar Contabilidad, pero no me sentí cómoda con la facultad."
-                data-en="Tried studying Accounting, but I didn’t feel comfortable at university."
-              >
-                Intenté estudiar Contabilidad, pero no me sentí cómoda con la
-                facultad.
+                data-en="Tried studying Accounting, but I didn’t feel comfortable at university.">
               </p>
             </div>
           </div>
@@ -450,10 +293,7 @@
               <p
                 class="timeline__text"
                 data-es="Estudié para azafata. Me fue bien, pero descubrí que no era mi camino."
-                data-en="Studied to become a flight attendant. I did well, but realized it wasn’t my path."
-              >
-                Estudié para azafata. Me fue bien, pero descubrí que no era mi
-                camino.
+                data-en="Studied to become a flight attendant. I did well, but realized it wasn’t my path.">
               </p>
             </div>
           </div>
@@ -465,9 +305,7 @@
               <p
                 class="timeline__text"
                 data-es="Exploré otros cursos: e-commerce, asesoría de imagen, marketing."
-                data-en="Explored other courses: e-commerce, image consulting, marketing."
-              >
-                Exploré otros cursos: e-commerce, asesoría de imagen, marketing.
+                data-en="Explored other courses: e-commerce, image consulting, marketing.">
               </p>
             </div>
           </div>
@@ -479,10 +317,7 @@
               <p
                 class="timeline__text"
                 data-es="Descubrí la programación gracias a mi novio, y me enamoré del código."
-                data-en="Discovered programming thanks to my boyfriend, and fell in love with code."
-              >
-                Descubrí la programación gracias a mi novio, y me enamoré del
-                código.
+                data-en="Discovered programming thanks to my boyfriend, and fell in love with code.">
               </p>
             </div>
           </div>
@@ -494,10 +329,7 @@
               <p
                 class="timeline__text"
                 data-es="Estudio, practico y desarrollo con pasión desde casa. Buscando crecer y lograr independencia."
-                data-en="I study, practice and develop with passion from home. Always seeking growth and independence."
-              >
-                Estudio, practico y desarrollo con pasión desde casa. Buscando
-                crecer y lograr independencia.
+                data-en="I study, practice and develop with passion from home. Always seeking growth and independence.">
               </p>
             </div>
           </div>
@@ -506,10 +338,8 @@
         <p
           class="journey__phrase fade-in-up"
           data-es="Del sur al centro, de la duda al código: <span>este es mi viaje.</span>"
-          data-en="From the south to the center, from doubt to code: <span>this is my journey.</span>"
-        >
-          Del sur al centro, de la duda al código:
-          <span>este es mi viaje.</span>
+          data-en="From the south to the center, from doubt to code: <span>this is my journey.</span>">
+
         </p>
       </section>
 
@@ -520,14 +350,14 @@
           data-es="Curiosidades sobre mí"
           data-en="Fun facts about me"
         >
-          Curiosidades sobre mí
+
         </h2>
         <span
           class="section__subtitle"
           data-es="Pequeños detalles que me definen"
           data-en="Little things that define me"
         >
-          Pequeños detalles que me definen
+
         </span>
 
         <div class="curiosities__container container grid">
@@ -537,7 +367,7 @@
               data-es="Soy fan de las series de suspenso 🕵️‍♀️"
               data-en="I'm a fan of suspense series 🕵️‍♀️"
             >
-              Soy fan de las series de suspenso 🕵️‍♀️
+ 
             </p>
           </div>
 
@@ -547,7 +377,7 @@
               data-es="Me inspiro con café y música tranquila ☕🎶"
               data-en="I get inspired by coffee and calm music ☕🎶"
             >
-              Me inspiro con café y música tranquila ☕🎶
+
             </p>
           </div>
 
@@ -557,7 +387,7 @@
               data-es="Programo con mi gata Emma cerca 🐱"
               data-en="I code with my cat Emma nearby 🐱"
             >
-              Programo con mi gata Emma cerca 🐱
+
             </p>
           </div>
         </div>
@@ -570,35 +400,34 @@
           data-es="Valores que me definen"
           data-en="Values that define me"
         >
-          Valores que me definen
         </h2>
         <span
           class="section__subtitle"
           data-es="Lo que me acompaña cada día"
           data-en="What guides me every day"
-          >Lo que me acompaña cada día</span
+          ></span
         >
 
         <div class="values__container container grid">
           <div class="value__item" data-aos="fade-up" data-aos-delay="0">
             <i class="uil uil-chart-growth value__icon"></i>
-            <p data-es="Perseverancia" data-en="Perseverance">Perseverancia</p>
+            <p data-es="Perseverancia" data-en="Perseverance"></p>
           </div>
           <div class="value__item" data-aos="fade-up" data-aos-delay="100">
             <i class="uil uil-palette value__icon"></i>
-            <p data-es="Creatividad" data-en="Creativity">Creatividad</p>
+            <p data-es="Creatividad" data-en="Creativity"></p>
           </div>
           <div class="value__item" data-aos="fade-up" data-aos-delay="200">
             <i class="uil uil-search value__icon"></i>
-            <p data-es="Detalle" data-en="Attention to detail">Detalle</p>
+            <p data-es="Detalle" data-en="Attention to detail"></p>
           </div>
           <div class="value__item" data-aos="fade-up" data-aos-delay="300">
             <i class="uil uil-heart-alt value__icon"></i>
-            <p data-es="Empatía" data-en="Empathy">Empatía</p>
+            <p data-es="Empatía" data-en="Empathy"></p>
           </div>
           <div class="value__item" data-aos="fade-up" data-aos-delay="400">
             <i class="uil uil-smile-wink value__icon"></i>
-            <p data-es="Autenticidad" data-en="Authenticity">Autenticidad</p>
+            <p data-es="Autenticidad" data-en="Authenticity"></p>
           </div>
         </div>
       </section>
@@ -610,13 +439,13 @@
           data-es="Mi proceso creativo"
           data-en="My creative process"
         >
-          Mi proceso creativo
+          
         </h2>
         <span
           class="section__subtitle"
           data-es="De la idea al código"
           data-en="From idea to code"
-          >De la idea al código</span
+          ></span
         >
 
         <div class="process__container container">
@@ -627,30 +456,28 @@
               data-es="Inspiración"
               data-en="Inspiration"
             >
-              Inspiración
+              
             </h3>
             <p
               class="process__text"
               data-es="Todo comienza con una idea o un problema que me motiva a buscar soluciones."
               data-en="Everything starts with an idea or a problem that inspires me to find solutions."
             >
-              Todo comienza con una idea o un problema que me motiva a buscar
-              soluciones.
+              
             </p>
           </div>
 
           <div class="process__step" data-aos="fade-up" data-aos-delay="200">
             <i class="uil uil-search process__icon"></i>
             <h3 class="process__title" data-es="Análisis" data-en="Analysis">
-              Análisis
+              
             </h3>
             <p
               class="process__text"
               data-es="Pienso el objetivo, las personas que van a usarlo y qué experiencia quiero crear."
               data-en="I think about the goal, the users, and the experience I want to create."
             >
-              Pienso el objetivo, las personas que van a usarlo y qué
-              experiencia quiero crear.
+             
             </p>
           </div>
 
@@ -661,15 +488,14 @@
               data-es="Maquetación"
               data-en="Wireframing"
             >
-              Maquetación
+             
             </h3>
             <p
               class="process__text"
               data-es="Organizo la estructura. A veces en Figma, a veces directamente con código."
               data-en="I organize the structure — sometimes in Figma, sometimes directly with code."
             >
-              Organizo la estructura. A veces en Figma, a veces directamente con
-              código.
+              
             </p>
           </div>
 
@@ -680,44 +506,42 @@
               data-es="Desarrollo"
               data-en="Development"
             >
-              Desarrollo
+             
             </h3>
             <p
               class="process__text"
               data-es="Convierto esa idea en algo funcional, interactivo y visualmente agradable."
               data-en="I turn that idea into something functional, interactive and visually appealing."
             >
-              Convierto esa idea en algo funcional, interactivo y visualmente
-              agradable.
+              
             </p>
           </div>
 
           <div class="process__step" data-aos="fade-up" data-aos-delay="500">
             <i class="uil uil-check-circle process__icon"></i>
             <h3 class="process__title" data-es="Revisión" data-en="Review">
-              Revisión
+             
             </h3>
             <p
               class="process__text"
               data-es="Testeo, corrijo y ajusto detalles visuales o de funcionalidad."
               data-en="I test, fix, and adjust any visual or functional details."
             >
-              Testeo, corrijo y ajusto detalles visuales o de funcionalidad.
+             
             </p>
           </div>
 
           <div class="process__step" data-aos="fade-up" data-aos-delay="600">
             <i class="uil uil-rocket process__icon"></i>
             <h3 class="process__title" data-es="Publicación" data-en="Launch">
-              Publicación
+             
             </h3>
             <p
               class="process__text"
               data-es="Lanzo el proyecto, lo comparto y me siento orgullosa del resultado final."
               data-en="I launch the project, share it, and feel proud of the final result."
             >
-              Lanzo el proyecto, lo comparto y me siento orgullosa del resultado
-              final.
+              
             </p>
           </div>
         </div>
@@ -725,17 +549,18 @@
 
       <!--==================== SKILLS + CERTIFICADOS COMBINADOS ====================-->
       <section class="skills-certificados section" id="skills-certificados">
+        <span id="skills" class="anchor-fix"></span>
         <div class="skills-certificados__container container grid">
           <!--==================== SKILLS ====================-->
           <div class="skills">
             <h2 class="section__title" data-es="Habilidades" data-en="Skills">
-              Habilidades
+              
             </h2>
             <span
               class="section__subtitle"
               data-es="Nivel técnico y herramientas"
               data-en="Technical level and tools"
-              >Nivel técnico y herramientas</span
+              ></span
             >
 
             <div class="skills__container grid">
@@ -743,7 +568,7 @@
                 <!-- FRONTEND -->
                 <div class="skills__content skills__open">
                   <div class="skills__header">
-                    <i class="uil uil-brackets-curly skills__icon icon--html"></i>
+                    <i class="uil uil-brackets-curly skills__icon skills__icon--highlight"></i>
                     <div>
                       <h3 class="skills__title">
                         Frontend
@@ -752,7 +577,7 @@
                         class="skills__subtitle"
                         data-es="Fuerte dominio aplicado en proyectos"
                         data-en="Strong command applied in projects"
-                        >Fuerte dominio aplicado en proyectos</span
+                        ></span
                       >
                     </div>
                     <i class="uil uil-angle-down skills__arrow"></i>
@@ -760,7 +585,7 @@
                   <div class="skills__list grid">
                     <div>
                       <div class="skills__titles">
-                        <i class="uil uil-html3 skills__icon icon--html"></i>
+                        <i class="uil uil-html3 skills__icon skills__icon--highlight"></i>
                         <h3 class="skills__name">HTML</h3>
                         <span>90%</span>
                       </div>
@@ -771,7 +596,7 @@
                     <div>
                       <div class="skills__titles">
                         <i
-                          class="uil uil-css3-simple skills__icon icon--html"
+                          class="uil uil-css3-simple skills__icon skills__icon--highlight"
                         ></i>
                         <h3 class="skills__name">CSS / SASS</h3>
                         <span>90%</span>
@@ -783,7 +608,7 @@
                     <div>
                       <div class="skills__titles">
                         <i
-                          class="uil uil-java-script skills__icon icon--html"
+                          class="uil uil-java-script skills__icon skills__icon--highlight"
                         ></i>
                         <h3 class="skills__name">JavaScript</h3>
                         <span>60%</span>
@@ -794,7 +619,7 @@
                     </div>
                     <div class="skills__data">
                       <div class="skills__titles">
-                        <i class="uil uil-react skills__icon icon--html"></i>
+                        <i class="uil uil-react skills__icon skills__icon--highlight"></i>
                         <h3 class="skills__name">React</h3>
                         <span>50%</span>
                       </div>
@@ -809,7 +634,7 @@
                 <div class="skills__content skills__close">
                   <div class="skills__header">
                     <i
-                      class="uil uil-brackets-curly skills__icon icon--html"
+                      class="uil uil-brackets-curly skills__icon skills__icon--highlight"
                     ></i>
                     <div>
                       <h3 class="skills__title">
@@ -819,7 +644,7 @@
                         class="skills__subtitle"
                         data-es="Uso en proyectos y formación"
                         data-en="Used in projects and learning"
-                        >Uso en proyectos y formación</span
+                        ></span
                       >
                     </div>
                     <i class="uil uil-angle-down skills__arrow"></i>
@@ -827,7 +652,7 @@
                   <div class="skills__list grid">
                     <div class="skills__data">
                       <div class="skills__titles">
-                        <i class="uil uil-github skills__icon icon--html"></i>
+                        <i class="uil uil-github skills__icon skills__icon--highlight"></i>
                         <h3 class="skills__name">Git & GitHub</h3>
                         <span>60%</span>
                       </div>
@@ -838,7 +663,7 @@
                     <div class="skills__data">
                       <div class="skills__titles">
                         <i
-                          class="uil uil-bootstrap skills__icon icon--html"
+                          class="uil uil-bootstrap skills__icon skills__icon--highlight"
                         ></i>
                         <h3 class="skills__name">Bootstrap</h3>
                         <span>60%</span>
@@ -851,7 +676,7 @@
                     </div>
                     <div class="skills__data">
                       <div class="skills__titles">
-                        <i class="uil uil-fire skills__icon icon--html"></i>
+                        <i class="uil uil-fire skills__icon skills__icon--highlight"></i>
                         <h3 class="skills__name">Firebase</h3>
                         <span>50%</span>
                       </div>
@@ -864,14 +689,14 @@
                     <div class="skills__data">
                       <div class="skills__titles">
                         <i
-                          class="uil uil-cloud-data-connection skills__icon icon--html"
+                          class="uil uil-cloud-data-connection skills__icon skills__icon--highlight"
                         ></i>
                         <h3
                           class="skills__name"
                           data-es="Consumo de APIs"
                           data-en="API Integration"
                         >
-                          Consumo de APIs
+                          
                         </h3>
                         <span>30%</span>
                       </div>
@@ -886,7 +711,7 @@
                 <div class="skills__content skills__close">
                   <div class="skills__header">
                     <i
-                      class="uil uil-brackets-curly skills__icon icon--html"
+                      class="uil uil-brackets-curly skills__icon skills__icon--highlight"
                     ></i>
                     <div>
                       <h3 class="skills__title">
@@ -896,7 +721,7 @@
                         class="skills__subtitle"
                         data-es="Nociones básicas"
                         data-en="Basic understanding"
-                        >Nociones básicas</span
+                        ></span
                       >
                     </div>
                     <i class="uil uil-angle-down skills__arrow"></i>
@@ -904,7 +729,7 @@
                   <div class="skills__list grid">
                     <div class="skills__data">
                       <div class="skills__titles">
-                        <i class="uil uil-figma skills__icon icon--html"></i>
+                        <i class="uil uil-figma skills__icon skills__icon--highlight"></i>
                         <h3 class="skills__name">Figma</h3>
                         <span>80%</span>
                       </div>
@@ -919,19 +744,20 @@
           </div>
 
           <!--==================== CERTIFICADOS ====================-->
+          <span id="certificados" class="anchor-fix"></span>
           <div class="certificados">
             <h2
               class="section__title"
               data-es="Certificados"
               data-en="Certificates"
             >
-              Certificados
+              
             </h2>
             <span
               class="section__subtitle"
               data-es="Formación y estudios"
               data-en="Education and training"
-              >Formación y estudios</span
+              ></span
             >
 
             <div class="qualification__container container">
@@ -944,7 +770,7 @@
                   <span
                     data-es="Educación / Certificados"
                     data-en="Education / Certificates"
-                    >Educación / Certificados</span
+                    ></span
                   >
                 </div>
               </div>
@@ -963,12 +789,11 @@
                         data-es="Desarrollo Web"
                         data-en="Web Development"
                       >
-                        Desarrollo Web
+                        
                       </h3>
                       <span
                         class="qualification__subtitle"
-                        data-es="Coder House"
-                        data-en="Coder House"
+                        
                         >Coder House</span
                       >
                       <div class="qualification__calendar">
@@ -978,7 +803,7 @@
                         class="qualification__button-cert"
                         data-es="Ver certificado"
                         data-en="View certificate"
-                        >Ver certificado</span
+                        ></span
                       >
                       <div class="qualification__modal">
                         <div class="qualification__modal-content">
@@ -1008,15 +833,13 @@
                     <div class="qualification__content-container">
                       <h3
                         class="qualification__title"
-                        data-es="JavaScript"
-                        data-en="JavaScript"
+                        
                       >
                         JavaScript
                       </h3>
                       <span
                         class="qualification__subtitle"
-                        data-es="Coder House"
-                        data-en="Coder House"
+                        
                         >Coder House</span
                       >
                       <div class="qualification__calendar">
@@ -1026,7 +849,7 @@
                         class="qualification__button-cert"
                         data-es="Ver certificado"
                         data-en="View certificate"
-                        >Ver certificado</span
+                        ></span
                       >
                       <div class="qualification__modal">
                         <div class="qualification__modal-content">
@@ -1047,15 +870,13 @@
                     <div class="qualification__content-container">
                       <h3
                         class="qualification__title"
-                        data-es="React"
-                        data-en="React"
+                        
                       >
                         React
                       </h3>
                       <span
                         class="qualification__subtitle"
-                        data-es="Coder House"
-                        data-en="Coder House"
+                        
                         >Coder House</span
                       >
                       <div class="qualification__calendar">
@@ -1065,7 +886,7 @@
                         class="qualification__button-cert"
                         data-es="Ver certificado"
                         data-en="View certificate"
-                        >Ver certificado</span
+                        ></span
                       >
                       <div class="qualification__modal">
                         <div class="qualification__modal-content">
@@ -1097,13 +918,13 @@
                         data-es="Desarrolladora Web FrontEnd"
                         data-en="Frontend Web Developer"
                       >
-                        Desarrolladora Web FrontEnd
+                        
                       </h3>
                       <span
                         class="qualification__subtitle"
                         data-es="Certificación Final - Coder House"
                         data-en="Final Certification - Coder House"
-                        >Certificación Final - Coder House</span
+                        ></span
                       >
                       <div class="qualification__calendar">
                         <i class="uil uil-calendar-alt"></i> 2022 - 2024
@@ -1112,7 +933,7 @@
                         class="qualification__button-cert"
                         data-es="Ver certificado"
                         data-en="View certificate"
-                        >Ver certificado</span
+                        ></span
                       >
                       <div class="qualification__modal">
                         <div class="qualification__modal-content">
@@ -1143,7 +964,7 @@
           class="section__subtitle"
           data-es="Lo que ofrezco"
           data-en="What I offer"
-          >Lo que ofrezco</span
+          ></span
         >
 
         <div class="services__container container grid">
@@ -1153,22 +974,18 @@
               <i class="uil uil-web-grid services__icon"></i>
               <h4
                 class="services__title"
-                data-es="Diseño & Maquetación Web"
-                data-en="Web Design & Layout"
+                data-es="Diseño & <br/>Maquetación Web"
+                data-en="Web Design <br/>& Layout"
               >
-                Diseño & <br />
-                Maquetación Web
+                
               </h4>
             </div>
 
-            <span
-              class="button button--flex button--small button--link services__button"
-              data-es="Ver más"
-              data-en="See more"
-            >
-              Ver más
+            <span class="button button--flex button--small button--link services__button">
+              <span data-es="Ver más" data-en="See more">Ver más</span>
               <i class="uil uil-arrow-right button__icon"></i>
             </span>
+            
 
             <div class="services__modal">
               <div class="services__modal-content">
@@ -1177,7 +994,7 @@
                   data-es="¿Qué incluye el servicio de Maquetación?"
                   data-en="What does the layout service include?"
                 >
-                  ¿Qué incluye el servicio de Maquetación?
+                  
                 </h4>
                 <i class="uil uil-times services__modal-close"></i>
 
@@ -1188,7 +1005,7 @@
                       data-es="Desarrollo de sitios web modernos y responsivos"
                       data-en="Development of modern and responsive websites"
                     >
-                      Desarrollo de sitios web modernos y responsivos
+                      
                     </p>
                   </li>
                   <li class="services__modal-service">
@@ -1197,7 +1014,7 @@
                       data-es="Maquetación con HTML y CSS desde 0"
                       data-en="Layout with HTML and CSS from scratch"
                     >
-                      Maquetación con HTML y CSS desde 0
+                      
                     </p>
                   </li>
                   <li class="services__modal-service">
@@ -1206,7 +1023,7 @@
                       data-es="Aplicación de estilos visuales con buenas prácticas"
                       data-en="Visual styling using best practices"
                     >
-                      Aplicación de estilos visuales con buenas prácticas
+                      
                     </p>
                   </li>
                   <li class="services__modal-service">
@@ -1215,7 +1032,7 @@
                       data-es="Adaptación de diseños desde Figma a código real"
                       data-en="Converting designs from Figma into real code"
                     >
-                      Adaptación de diseños desde Figma a código real
+                      
                     </p>
                   </li>
                 </ul>
@@ -1232,19 +1049,15 @@
                 data-es="Frontend<br /> Dinámico"
                 data-en="Dynamic<br /> Frontend"
               >
-                Frontend <br />
-                Dinámico
+                
               </h4>
             </div>
 
-            <span
-              class="button button--flex button--small button--link services__button"
-              data-es="Ver más"
-              data-en="See more"
-            >
-              Ver más
+            <span class="button button--flex button--small button--link services__button">
+              <span data-es="Ver más" data-en="See more">Ver más</span>
               <i class="uil uil-arrow-right button__icon"></i>
             </span>
+            
 
             <div class="services__modal">
               <div class="services__modal-content">
@@ -1253,7 +1066,7 @@
                   data-es="Interactividad con JavaScript"
                   data-en="Interactivity with JavaScript"
                 >
-                  Interactividad con JavaScript
+                  
                 </h4>
                 <i class="uil uil-times services__modal-close"></i>
 
@@ -1264,7 +1077,7 @@
                       data-es="Componentes con React"
                       data-en="Components with React"
                     >
-                      Componentes con React
+                      
                     </p>
                   </li>
                   <li class="services__modal-service">
@@ -1273,7 +1086,7 @@
                       data-es="Uso de librerías (Bootstrap, Swiper, etc.)"
                       data-en="Use of libraries (Bootstrap, Swiper, etc.)"
                     >
-                      Uso de librerías (Bootstrap, Swiper, etc.)
+                      
                     </p>
                   </li>
                 </ul>
@@ -1287,22 +1100,18 @@
               <i class="uil uil-pen services__icon"></i>
               <h4
                 class="services__title"
-                data-es="Integración con Backend"
-                data-en="Backend Integration"
+                data-es="Integración <br/>con Backend"
+                data-en="Backend <br/>Integration"
               >
-                Integración con<br />
-                Backend
+                
               </h4>
             </div>
 
-            <span
-              class="button button--flex button--small button--link services__button"
-              data-es="Ver más"
-              data-en="See more"
-            >
-              Ver más
+            <span class="button button--flex button--small button--link services__button">
+              <span data-es="Ver más" data-en="See more">Ver más</span>
               <i class="uil uil-arrow-right button__icon"></i>
             </span>
+            
 
             <div class="services__modal">
               <div class="services__modal-content">
@@ -1311,8 +1120,7 @@
                   data-es="Integración con Backend"
                   data-en="Backend Integration"
                 >
-                  Integración con<br />
-                  Backend
+                  
                 </h4>
                 <i class="uil uil-times services__modal-close"></i>
 
@@ -1320,13 +1128,13 @@
                   <li class="services__modal-service">
                     <i class="uil uil-check-circle services__modal-icon"></i>
                     <p data-es="CRUD con Firebase" data-en="CRUD with Firebase">
-                      CRUD con Firebase
+                      
                     </p>
                   </li>
                   <li class="services__modal-service">
                     <i class="uil uil-check-circle services__modal-icon"></i>
                     <p data-es="Consumo de APIs" data-en="API consumption">
-                      Consumo de APIs
+                      
                     </p>
                   </li>
                   <li class="services__modal-service">
@@ -1335,7 +1143,7 @@
                       data-es="Deploy en Netlify / GitHub Pages"
                       data-en="Deployment on Netlify / GitHub Pages"
                     >
-                      Deploy en Netlify / GitHub Pages
+                      
                     </p>
                   </li>
                 </ul>
@@ -1347,14 +1155,14 @@
 
       <!--==================== PORTFOLIO ====================-->
       <section class="portfolio section" id="portfolio">
-        <h2 class="section__title" data-es="Portfolio" data-en="Portfolio">
+        <h2 class="section__title">
           Portfolio
         </h2>
         <span
           class="section__subtitle"
           data-es="Mis creaciones"
           data-en="My creations"
-          >Mis creaciones</span
+          ></span
         >
 
         <div class="portfolio__container container swiper-container">
@@ -1372,7 +1180,7 @@
                   data-es="Sitio Web Estático"
                   data-en="Static Website"
                 >
-                  Sitio Web Estático
+                  
                 </h3>
                 <p class="portfolio__description">
                   <i class="uil uil-html3"></i> HTML
@@ -1383,8 +1191,7 @@
                   data-es="Proyecto final del curso de Desarrollo Web. Maquetación con HTML y CSS, diseño responsive adaptado a dispositivos móviles."
                   data-en="Final project from the Web Development course. HTML & CSS layout, responsive design for mobile devices."
                 >
-                  Proyecto final del curso de Desarrollo Web. Maquetación con
-                  HTML y CSS, diseño responsive adaptado a dispositivos móviles.
+                  
                 </p>
                 <a
                   href="https://camiflex.netlify.app/"
@@ -1392,7 +1199,7 @@
                   class="button button--flex button--small portfolio__button"
                 >
                   <span data-es="Ver proyecto" data-en="View project"
-                    >Ver proyecto</span
+                    ></span
                   >
                   <i class="uil uil-external-link-alt button__icon"></i>
                 </a>
@@ -1412,7 +1219,7 @@
                   data-es="Carrito de compras JS"
                   data-en="JS Shopping Cart"
                 >
-                  Carrito de compras JS
+                  
                 </h3>
                 <p class="portfolio__description">
                   <i class="uil uil-html3"></i> HTML
@@ -1423,9 +1230,7 @@
                   data-es="Proyecto final de JavaScript. Carrito dinámico con funciones de agregar, eliminar y calcular el total. Uso de DOM y eventos."
                   data-en="JavaScript final project. Dynamic cart with add/remove/calculate features. DOM and event handling."
                 >
-                  Proyecto final de JavaScript. Carrito dinámico con funciones
-                  de agregar, eliminar y calcular el total. Uso de DOM y
-                  eventos.
+                  
                 </p>
                 <a
                   href="https://github.com/AgustinaMontecchia/PFMontecchia"
@@ -1433,7 +1238,7 @@
                   class="button button--flex button--small portfolio__button"
                 >
                   <span data-es="Ver proyecto" data-en="View project"
-                    >Ver proyecto</span
+                    ></span
                   >
                   <i class="uil uil-external-link-alt button__icon"></i>
                 </a>
@@ -1450,10 +1255,9 @@
               <div class="portfolio__data">
                 <h3
                   class="portfolio__title"
-                  data-es="E-commerce responsive"
-                  data-en="Responsive E-commerce"
+                  
                 >
-                  E-commerce responsive
+                  Responsive E-commerce
                 </h3>
                 <p class="portfolio__description">
                   <i class="uil uil-html3"></i> HTML
@@ -1464,8 +1268,7 @@
                   data-es="Proyecto final de React. Uso de componentes, rutas, props, estados, eventos y más. Estructura moderna y dinámica."
                   data-en="React final project. Components, routes, props, states, events, and more. Modern, dynamic structure."
                 >
-                  Proyecto final de React. Uso de componentes, rutas, props,
-                  estados, eventos y más. Estructura moderna y dinámica.
+                  
                 </p>
                 <a
                   href="https://github.com/AgustinaMontecchia/cursoReact"
@@ -1473,7 +1276,7 @@
                   class="button button--flex button--small portfolio__button"
                 >
                   <span data-es="Ver proyecto" data-en="View project"
-                    >Ver proyecto</span
+                    ></span
                   >
                   <i class="uil uil-external-link-alt button__icon"></i>
                 </a>
@@ -1496,25 +1299,25 @@
                 data-es="¿Tenés un proyecto en mente?"
                 data-en="Do you have a project in mind?"
               >
-                ¿Tenés un proyecto en mente?
+                
               </h2>
               <h3
                 class="project__subtitle"
                 data-es="¡Trabajemos juntos/as!"
                 data-en="Let's work together!"
               >
-                ¡Trabajemos juntos/as!
+                
               </h3>
               <p
                 class="project__description"
                 data-es="Contactame ahora y lo hacemos realidad"
                 data-en="Contact me now and let's make it real"
               >
-                Contactame ahora y lo hacemos realidad
+                
               </p>
               <a href="#contact" class="button button--flex button--white">
                 <span data-es="Contactame" data-en="Contact me"
-                  >Contactame</span
+                  ></span
                 >
                 <i class="uil uil-rocket project__icon button__icon"></i>
               </a>
@@ -1536,14 +1339,14 @@
           data-es="Valoraciones Profesionales"
           data-en="Professional Reviews"
         >
-          Valoraciones Profesionales
+          
         </h2>
         <span
           class="section__subtitle"
           data-es="Lo que dijeron mis profesores"
           data-en="What my instructors said"
         >
-          Lo que dijeron mis profesores
+          
         </span>
 
         <div class="testimonial__container container swiper-container">
@@ -1563,7 +1366,7 @@
                       data-es="Profesor<br/> Desarrollo Web"
                       data-en="Instructor<br/> Web Development"
                     >
-                      Profesor</br> Desarrollo Web
+                      
                     </h3>
                     <span class="testimonial__client">CoderHouse</span>
                   </div>
@@ -1582,10 +1385,7 @@
                 data-es="Buen trabajo con la estructura de carpetas y uso de HTML semántico. Excelente aplicación de SASS con partials, mixins, variables y animaciones. Tus wireframes son claros y bien distribuidos. ¡Seguí así!"
                 data-en="Good work on folder structure and use of semantic HTML. Excellent application of SASS with partials, mixins, variables, and animations. Your wireframes are clear and well-organized. Keep it up!"
               >
-                Buen trabajo con la estructura de carpetas y uso de HTML
-                semántico. Excelente aplicación de SASS con partials, mixins,
-                variables y animaciones. Tus wireframes son claros y bien
-                distribuidos. ¡Seguí así!
+                
               </p>
             </div>
 
@@ -1604,7 +1404,7 @@
                       data-es="Profesor<br/> JavaScript"
                       data-en="Instructor<br/> JavaScript"
                     >
-                      Profesor<br/> JavaScript
+                      
                     </h3>
                     <span class="testimonial__client">CoderHouse</span>
                   </div>
@@ -1623,11 +1423,7 @@
                 data-es="Tu proyecto demuestra una gran comprensión de funciones, condicionales y eventos. Capturás bien las entradas del usuario y trabajás con DOM. Seguí reforzando el uso de almacenamiento local para mejorar la experiencia del usuario. ¡Muy buen trabajo!"
                 data-en="Your project shows great understanding of functions, conditionals, and events. You handle user input well and work with the DOM. Keep improving your use of local storage to enhance UX. Great job!"
               >
-                Tu proyecto demuestra una gran comprensión de funciones,
-                condicionales y eventos. Capturás bien las entradas del usuario
-                y trabajás con DOM. Seguí reforzando el uso de almacenamiento
-                local para mejorar la experiencia del usuario. ¡Muy buen
-                trabajo!
+                
               </p>
             </div>
 
@@ -1646,7 +1442,7 @@
                       data-es="Profesor<br/> React"
                       data-en="Instructor<br/> React"
                     >
-                      Profesor<br/> React
+                      
                     </h3>
                     <span class="testimonial__client">CoderHouse</span>
                   </div>
@@ -1665,13 +1461,33 @@
                 data-es="Excelente entrega. Se nota tu evolución: tu app tiene buen orden, estructura, lógica y está bien estilizada. Usaste correctamente Context, Firebase y React Router. Solo resta mejorar aspectos visuales y seguridad. ¡Felicitaciones, futura colega!"
                 data-en="Excellent submission. Your evolution shows: your app is well-structured, logical, and nicely styled. You correctly used Context, Firebase, and React Router. Just improve visuals and security. Congrats, future colleague!"
               >
-                Excelente entrega. Se nota tu evolución: tu app tiene buen
-                orden, estructura, lógica y está bien estilizada. Usaste
-                correctamente Context, Firebase y React Router. Solo resta
-                mejorar aspectos visuales y seguridad. ¡Felicitaciones, futura
-                colega!
+                
               </p>
             </div>
+            <!-- TESTIMONIAL 3 -->
+            <div class="testimonial__content swiper-slide">
+              <div class="testimonial__data">
+                <div class="testimonial__header">
+                  <img src="assets/img/testimonial4.jpg" alt="" class="testimonial__img" />
+                  <div>
+                    <h3 class="testimonial__name" data-es="Profesor<br/> Diseño UX" data-en="Instructor<br/> UX Design"></h3>
+                    <span class="testimonial__client">CoderHouse</span>
+                  </div>
+                </div>
+                <div>
+                  <i class="fa-solid fa-star testimonial__icon-star"></i>
+                  <i class="fa-solid fa-star testimonial__icon-star"></i>
+                  <i class="fa-solid fa-star testimonial__icon-star"></i>
+                  <i class="fa-solid fa-star testimonial__icon-star"></i>
+                  <i class="fa-solid fa-star testimonial__icon-star"></i>
+                </div>
+              </div>
+              <p class="testimonial__description"
+                 data-es="Destacada participación y entrega. Tu enfoque creativo y atención al usuario mejoraron notablemente tu proyecto."
+                 data-en="Outstanding participation and delivery. Your creative approach and user focus greatly enhanced your project.">
+              </p>
+            </div>
+            
           </div>
 
           <!-- Paginación -->
@@ -1682,14 +1498,14 @@
       <!--==================== CONTACT ME ====================-->
       <section class="contact section" id="contact">
         <h2 class="section__title" data-es="Contactame" data-en="Contact me">
-          Contactame
+          
         </h2>
         <span
           class="section__subtitle"
           data-es="Pongámosnos en contacto"
           data-en="Let's get in touch"
         >
-          Pongámosnos en contacto
+          
         </span>
 
         <div class="contact__container container grid">
@@ -1698,9 +1514,7 @@
             data-es="¿Tenés una idea o proyecto? Estoy lista para escucharte y crear algo increíble juntas/os."
             data-en="Have an idea or project? I'm ready to hear you and create something amazing together."
           >
-            ¿Tenés una idea o proyecto?
-            <span class="contact__highlight">Estoy lista para escucharte</span>
-            y crear algo increíble juntas/os.
+            
           </p>
 
           <div>
@@ -1708,7 +1522,7 @@
               <i class="uil uil-phone contact__icon"></i>
               <div>
                 <h3 class="contact__title" data-es="Llamame" data-en="Call me">
-                  Llamame
+                  
                 </h3>
                 <span class="contact__subtitle">+54 351 76 73 998</span>
               </div>
@@ -1717,7 +1531,7 @@
             <div class="contact__information">
               <i class="uil uil-envelope contact__icon"></i>
               <div>
-                <h3 class="contact__title" data-es="Email" data-en="Email">
+                <h3 class="contact__title">
                   Email
                 </h3>
                 <span class="contact__subtitle">montecchia.agus@gmail.com</span>
@@ -1732,12 +1546,14 @@
                   data-es="Ubicación"
                   data-en="Location"
                 >
-                  Ubicación
+                  
                 </h3>
                 <span class="contact__subtitle">Córdoba - Argentina</span>
               </div>
             </div>
           </div>
+          
+
 
           <form
             id="contact-form"
@@ -1746,13 +1562,13 @@
             class="contact__form grid"
           >
             <div class="contact__inputs grid">
-              <div class="contact__content">
+              <div class="contact__content fade-in-up">
                 <label
                   for="name"
                   class="contact__label"
                   data-es="Nombre"
                   data-en="Name"
-                  >Nombre</label
+                  ></label
                 >
                 <input
                   type="text"
@@ -1763,12 +1579,11 @@
                   required
                 />
               </div>
-              <div class="contact__content">
+              <div class="contact__content fade-in-up">
                 <label
                   for="email"
                   class="contact__label"
-                  data-es="Email"
-                  data-en="Email"
+                  
                   >Email</label
                 >
                 <input
@@ -1782,13 +1597,13 @@
               </div>
             </div>
 
-            <div class="contact__content">
+            <div class="contact__content fade-in-up">
               <label
                 for="subject"
                 class="contact__label"
                 data-es="Asunto"
                 data-en="Subject"
-                >Asunto</label
+                ></label
               >
               <input
                 type="text"
@@ -1800,13 +1615,13 @@
               />
             </div>
 
-            <div class="contact__content">
+            <div class="contact__content fade-in-up">
               <label
                 for="message"
                 class="contact__label"
                 data-es="Mensaje"
                 data-en="Message"
-                >Mensaje</label
+                ></label
               >
               <textarea
                 name="message"
@@ -1824,13 +1639,13 @@
               data-es="¡Gracias! Tu consulta fue enviada correctamente."
               data-en="Thanks! Your message was successfully sent."
             >
-              ¡Gracias! Tu consulta fue enviada correctamente.
+              
             </div>
 
             <div>
               <button type="submit" class="button button--flex">
                 <span data-es="Enviar mensaje" data-en="Send message"
-                  >Enviar mensaje</span
+                  ></span
                 >
                 <i class="uil uil-message button__icon"></i>
               </button>
@@ -1848,8 +1663,7 @@
             <h1 class="footer__title">Agustina</h1>
             <span
               class="footer__subtitle"
-              data-es="Frontend Developer"
-              data-en="Frontend Developer"
+              
               >Frontend Developer</span
             >
 
@@ -1858,7 +1672,7 @@
               data-es="Gracias por llegar hasta acá. Esto es solo el comienzo."
               data-en="Thanks for scrolling this far. This is just the beginning."
             >
-              Gracias por llegar hasta acá. Esto es solo el comienzo.
+              
             </p>
 
             <p
@@ -1866,8 +1680,7 @@
               data-es='Diseñado con <i class="uil uil-heart-alt footer__icon"></i> por Agus.'
               data-en='Designed with <i class="uil uil-heart-alt footer__icon"></i> by Agus.'
             >
-              Diseñado con <i class="uil uil-heart-alt footer__icon"></i> por
-              Agus.
+              
             </p>
           </div>
 
@@ -1878,15 +1691,14 @@
                 class="footer__link"
                 data-es="Servicios"
                 data-en="Services"
-                >Servicios</a
+                ></a
               >
             </li>
             <li>
               <a
                 href="#portfolio"
                 class="footer__link"
-                data-es="Portfolio"
-                data-en="Portfolio"
+                
                 >Portfolio</a
               >
             </li>
@@ -1896,7 +1708,7 @@
                 class="footer__link"
                 data-es="Contacto"
                 data-en="Contact"
-                >Contacto</a
+                ></a
               >
             </li>
           </ul>
@@ -1932,7 +1744,7 @@
           data-es="&#169; Agustina Montecchia. Todos los derechos reservados."
           data-en="&#169; Agustina Montecchia. All rights reserved."
         >
-          &#169; Agustina Montecchia. Todos los derechos reservados.
+          
         </p>
       </div>
     </footer>
@@ -1954,6 +1766,9 @@
 
     <!--==================== SWIPER JS ====================-->
     <script src="assets/js/swiper-bundle.min.js"></script>
+    
+    
+    
 
     <!--==================== MAIN JS PERSONAL ====================-->
     <script src="assets/js/main.js"></script>

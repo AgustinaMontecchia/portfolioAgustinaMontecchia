@@ -1,0 +1,51 @@
+// main.scss - Archivo principal de SASS
+
+// Abstracts
+@import './abstracts/variables';
+@import './abstracts/mixins';
+@import './abstracts/functions';
+
+// Base
+@import './base/reset';
+@import './base/typography';
+@import './base/base';
+@import './base/responsive-root';
+
+
+// Utils
+@import './utils/animations';
+@import 'utils/media-queries';
+@import './utils/helpers';
+
+// Layout
+@import './layout/header';
+@import './layout/nav';
+@import './layout/footer';
+@import './layout/grid';
+
+// Components
+@import './components/buttons';
+@import './components/banner';
+@import './components/scroll';
+@import './components/modal';
+
+// Themes
+@import './themes/dark';
+@import './themes/agus';
+
+// Pages
+@import './pages/home';
+@import './pages/about';
+@import './pages/timeline';
+@import './pages/curiosities';
+@import './pages/values';
+@import './pages/process';
+@import './pages/skills';
+@import './pages/certificates';
+@import './pages/services';
+@import './pages/portfolio';
+@import './pages/project';
+@import './pages/contact';
+
+// Vendors
+@import './vendors/swiper';

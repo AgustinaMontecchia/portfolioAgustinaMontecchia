@@ -1,0 +1,67 @@
+// ====================
+// 💼 SERVICIOS
+// ====================
+
+.services__container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.services__content {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 3.5rem 0.5rem 1.25rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.services__icon {
+  display: block;
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.services__title {
+  font-size: var(--h3-font-size);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--title-color);
+}
+
+.services__button {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--small-font-size);
+  color: var(--first-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+
+  // Efecto al pasar el mouse
+  &:hover {
+    transform: translateX(4px); 
+  }
+
+  // Animación en la flechita
+  .button__icon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .button__icon {
+    transform: translateX(4px) rotate(8deg);
+  }
+}
+
+
+

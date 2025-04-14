@@ -1,0 +1,91 @@
+// ============================
+// 🎨 VARIABLES CSS PARA :root (modificables con clases)
+// ============================
+:root {
+    // 🎨 Colores (tema claro por defecto)
+    --first-color: hsl(315, 30%, 65%);
+    --first-color-second: hsl(315, 18%, 72%);
+    --first-color-alt: hsl(315, 20%, 58%);
+    --first-color-lighter: hsl(315, 40%, 88%);
+  
+    --title-color: hsl(210, 15%, 15%);
+    --text-color: hsl(210, 10%, 35%);
+    --text-color-light: hsl(210, 10%, 60%);
+  
+    --input-color: hsl(0, 0%, 98%);
+    --body-color: hsl(0, 0%, 100%);
+    --container-color: #fff;
+  
+    --scroll-bar-color: hsl(315, 40%, 95%);
+    --scroll-thumb-color: hsl(315, 30%, 75%);
+  
+    // 🖋 Tipografía
+    --body-font: 'Nunito', sans-serif;
+    --title-font: 'Manrope', sans-serif;
+  
+    // 📏 Tamaños de fuente
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+  
+  // ============================
+  // 💎 VARIABLES SASS (para utilidades internas)
+  // ============================
+  
+  $hue-color: 315;
+  $header-height: 3rem;
+  
+  // Paleta HSL para cálculos o mezclas
+  $first-color: hsl($hue-color, 30%, 65%);
+  $first-color-second: hsl($hue-color, 18%, 72%);
+  $first-color-alt: hsl($hue-color, 20%, 58%);
+  $first-color-lighter: hsl($hue-color, 40%, 88%);
+  
+  $title-color: hsl(210, 15%, 15%);
+  $text-color: hsl(210, 10%, 35%);
+  $text-color-light: hsl(210, 10%, 60%);
+  
+  $input-color: hsl(0, 0%, 98%);
+  $body-color: hsl(0, 0%, 100%);
+  $container-color: #fff;
+  
+  $scroll-bar-color: hsl($hue-color, 40%, 95%);
+  $scroll-thumb-color: hsl($hue-color, 30%, 75%);
+  
+  // Tipografía
+  $body-font: 'Nunito', sans-serif;
+  $title-font: 'Manrope', sans-serif;
+  
+  // Tamaños tipográficos
+  $big-font-size: 2rem;
+  $h1-font-size: 1.5rem;
+  $h2-font-size: 1.25rem;
+  $h3-font-size: 1.125rem;
+  $normal-font-size: 0.938rem;
+  $small-font-size: 0.813rem;
+  $smaller-font-size: 0.75rem;
+  
+  // Peso tipográfico
+  $font-medium: 500;
+  $font-semi-bold: 600;
+  
+  // Margenes inferiores
+  $mb-0-25: 0.25rem;
+  $mb-0-5: 0.5rem;
+  $mb-0-75: 0.75rem;
+  $mb-1: 1rem;
+  $mb-1-5: 1.5rem;
+  $mb-2: 2rem;
+  $mb-2-5: 2.5rem;
+  $mb-3: 3rem;
+  
+  // Z-index
+  $z-tooltip: 10;
+  $z-fixed: 100;
+  $z-modal: 1000;
+  

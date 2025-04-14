@@ -1,0 +1,23 @@
+// ===========================
+// 🌙 MODO OSCURO
+// ===========================
+
+body.dark-theme {
+  // 🎨 Paleta de colores
+  --first-color: hsl(315, 35%, 60%);
+  --first-color-second: hsl(315, 20%, 25%);
+  --first-color-alt: hsl(315, 25%, 45%);
+  --first-color-lighter: hsl(315, 35%, 75%);
+
+  // 🌚 Colores de texto y fondo
+  --title-color: hsl(0, 0%, 95%);
+  --text-color: hsl(0, 0%, 75%);
+  --text-color-light: hsl(0, 0%, 60%);
+  --body-color: hsl(315, 15%, 12%);
+  --container-color: hsl(315, 15%, 16%);
+  --input-color: hsl(315, 15%, 20%);
+
+  // 🎛️ Scroll
+  --scroll-bar-color: hsl(315, 15%, 30%);
+  --scroll-thumb-color: hsl(315, 25%, 75%);
+}

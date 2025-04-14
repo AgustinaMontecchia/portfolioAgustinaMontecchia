@@ -1,0 +1,48 @@
+// =======================
+// 🌐 ESTILOS GLOBALES
+// =======================
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  display: block;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  text-align: center;
+  transition: color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--normal-font-size);
+  margin: 1rem; 
+  text-align: center;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+  font-style: $font-semi-bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

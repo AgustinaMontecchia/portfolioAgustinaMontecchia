@@ -1,0 +1,30 @@
+// ===========================
+// 🧰 CLASES AUXILIARES Y FIXES
+// ===========================
+
+// Ancla para corregir scroll con header fijo
+.anchor-fix {
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+  }
+  
+  // Ocultar texto solo visualmente (accesibilidad) - no declarado?
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  
+  // Centrado absoluto - no declarado?
+  .center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  

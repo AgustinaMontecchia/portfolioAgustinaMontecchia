@@ -1,0 +1,40 @@
+// ===========================
+// ✒️ TIPOGRAFÍA GENERAL
+// ===========================
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--title-font);
+  color: var(--title-color);
+  font-weight: $font-semi-bold;
+  transition: color 0.3s ease;
+}
+
+.section__title,
+.skills__title,
+.services__title,
+.qualification__title,
+.project__title,
+.footer__title {
+  font-weight: $font-semi-bold;
+  color: var(--title-color);
+  transition: color 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

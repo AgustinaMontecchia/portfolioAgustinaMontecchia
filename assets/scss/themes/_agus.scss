@@ -1,0 +1,32 @@
+// ==========================
+// 💖 MODO AGUS
+// ==========================
+
+body.agus-theme {
+  // 🎨 Paleta principal
+  --first-color: #f28cc8;
+  --first-color-alt: #e667b0;
+  --first-color-second: #f8c8dc;
+  --first-color-lighter: #fdd6e6;
+
+  // 📝 Tipografía y texto
+  --title-color: #6e2142;
+  --text-color: #753d57;
+  --text-color-light: #9b5c7e;
+
+  // 📦 Fondos
+  --input-color: #fff0f6;
+  --body-color: #fff0f6;
+  --container-color: #fff7fb;
+
+  // 🖱️ Scroll personalizado
+  --scroll-bar-color: #fbcde3;
+  --scroll-thumb-color: #f28cc8;
+}
+
+
+body.agus-theme .home {
+  background-image: url("https://www.transparenttextures.com/patterns/hearts.png");
+  background-size: cover;
+  background-repeat: repeat;
+}

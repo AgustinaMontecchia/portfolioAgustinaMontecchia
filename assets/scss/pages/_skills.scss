@@ -1,0 +1,127 @@
+// ====================
+// 💡 SKILLS
+// ====================
+.skills__container {
+  row-gap: 0;
+  margin-left: 9rem;
+  margin-top: 1rem;
+}
+
+.skills__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+}
+
+.skills__icon,
+.skills__arrow {
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.skills__arrow {
+  margin-left: auto;
+  transition: 0.4s;
+}
+
+.skills__list {
+  row-gap: 1.5rem;
+  padding-left: 1rem;
+}
+
+.skills__titles {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.skills__name {
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+  color: var(--title-color);
+}
+
+.skills__bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--first-color-lighter);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.skills__percentage {
+  height: 100%;
+  background: linear-gradient(90deg, var(--first-color), var(--first-color-alt));
+  border-radius: 20px;
+  transition: width 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.skills__open .skills__arrow {
+  transform: rotate(-180deg);
+}
+
+.skills__open .skills__list {
+  height: max-content;
+  margin-bottom: 2.5rem;
+}
+
+.skills__close .skills__list {
+  height: 0;
+  overflow: hidden;
+}
+
+.skills-certificados__container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 100%;
+
+  > div {
+    align-self: start;
+  }
+}
+
+.skills,
+.certificados {
+  width: 100%;
+}
+
+.skills__title {
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+}
+
+.skills__subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.skills__icon--highlight {
+  color: var(--first-color);
+  transition: transform 0.3s ease;
+  margin-right: 1rem;
+
+  &:hover {
+    transform: scale(1.2) rotate(5deg);
+  }
+}
+
+// Barras individuales por tecnología
+.skills__html     { width: 90%; }
+.skills__css      { width: 90%; }
+.skills__js       { width: 60%; }
+.skills__react    { width: 50%; }
+.skills__git      { width: 60%; }
+.skills__bootstrap{ width: 60%; }
+.skills__firebase { width: 50%; }
+.skills__api      { width: 30%; }
+.skills__figma    { width: 80%; }
