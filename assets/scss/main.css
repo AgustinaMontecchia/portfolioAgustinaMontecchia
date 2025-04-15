@@ -1,18 +1,18 @@
 @charset "UTF-8";
 :root {
-  --first-color: hsl(315, 30%, 65%);
-  --first-color-second: hsl(315, 18%, 72%);
-  --first-color-alt: hsl(315, 20%, 58%);
-  --first-color-light: hsl(315, 35%, 76%);
-  --first-color-lighter: hsl(315, 40%, 88%);
-  --title-color: hsl(210, 15%, 15%);
-  --text-color: hsl(210, 10%, 35%);
-  --text-color-light: hsl(210, 10%, 60%);
-  --input-color: hsl(0, 0%, 98%);
-  --body-color: hsl(0, 0%, 100%);
-  --container-color: #fff;
-  --scroll-bar-color: hsl(315, 40%, 95%);
-  --scroll-thumb-color: hsl(315, 30%, 75%);
+  --first-color: hsl(175, 45%, 35%);
+  --first-color-second: hsl(120, 38%, 68%);
+  --first-color-alt: hsl(6, 94%, 75%);
+  --first-color-light: hsl(305, 100%, 88%);
+  --first-color-lighter: hsl(49, 77%, 85%);
+  --body-color: hsl(49, 100%, 96%);
+  --container-color: hsl(120, 40%, 90%);
+  --input-color: hsl(175, 45%, 96%);
+  --title-color: hsl(175, 45%, 20%);
+  --text-color: hsl(175, 20%, 25%);
+  --text-color-light: hsl(175, 15%, 50%);
+  --scroll-bar-color: hsl(49, 80%, 92%);
+  --scroll-thumb-color: hsl(6, 94%, 75%);
   --body-font: "Nunito", sans-serif;
   --title-font: "Manrope", sans-serif;
   --big-font-size: 2rem;
@@ -332,9 +332,6 @@ img {
   .skills__header {
     justify-content: flex-start;
     gap: 0.75rem;
-  }
-  .qualification__data {
-    gap: 0.5rem;
   }
   .services__container {
     display: flex;
@@ -2210,7 +2207,7 @@ body.agus-theme .home {
   font-size: var(--h2-font-size);
   margin-bottom: 0.75rem;
   color: var(--title-color);
-  text-align: center;
+  text-align: start;
 }
 
 .project__subtitle {
