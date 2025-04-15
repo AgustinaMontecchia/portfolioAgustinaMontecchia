@@ -1,21 +1,27 @@
 // ====================
 // 💡 PROYECTO EN MENTE
 // ====================
+
+.project__bg {
+  background-color: var(--first-color-light); 
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
 .project__container {
   display: grid;
-  grid-template-columns: 1fr auto; // 📍 auto para que la imagen no estire tanto
+  grid-template-columns: 1fr auto;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: 3rem 2rem; // ajustá según el espacio que quieras
 }
 
-.project__bg {
-  background-color: var(--container-color); // Adaptado al tema activo
-  padding-bottom: 3rem;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: background-color 0.3s ease;
+.project__data {
+  text-align: left;
+  justify-self: start;
+  max-width: 500px;
 }
 
 .project__title {
@@ -49,10 +55,3 @@
     transform: scale(1.05);
   }
 }
-
-.project__data {
-  text-align: left;
-  justify-self: start;
-  max-width: 500px;
-}
-

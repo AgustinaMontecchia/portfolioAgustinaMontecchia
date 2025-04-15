@@ -10,8 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const arrow = dropdown?.querySelector('.nav__arrow');
 
   if (navToggle) {
-    navToggle.addEventListener('click', e => {
-      e.stopPropagation();
+    navToggle.addEventListener('click', () => {
       navMenu.classList.toggle('show-menu');
     });
   }
@@ -32,10 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ✅ Cierra el menú si se hace clic fuera
   document.addEventListener('click', e => {
     const isClickInside = navMenu.contains(e.target) || navToggle.contains(e.target);
     if (!isClickInside && navMenu.classList.contains('show-menu')) {
       navMenu.classList.remove('show-menu');
+      submenu?.classList.remove('show-submenu');
+      arrow?.classList.remove('arrow-rotated');
     }
   });
 

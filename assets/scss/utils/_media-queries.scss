@@ -39,7 +39,6 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     width: 100%;
-    background-color: var(--body-color);
     z-index: 1000;
   }
 
@@ -60,7 +59,6 @@
     bottom: -100%;
     left: 0;
     width: 100%;
-    background-color: var(--body-color);
     padding: 2rem 1.5rem 4rem;
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
@@ -85,7 +83,6 @@
     right: 1.5rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--first-color);
     z-index: 1001;
   }
 
@@ -121,46 +118,78 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 2rem 0;
+    padding: 3rem 1.5rem;
     gap: 2rem;
   }
-
-  .home__blob {
-    width: 200px;
-    max-width: 70vw;
-  }
-
+  
   .home__data {
-    max-width: 100%;
+    order: 1;
+    max-width: 90%;
   }
-
+  
+  .home__blob {
+    display: block;
+    width: 220px;
+    height: auto;
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  .home__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .custom-blob-img {
+    width: 100px;
+    max-width: 40vw;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+  
+  
   // ===== ABOUT =====
   .about__description {
     line-height: 1.6;
     font-size: 0.95rem;
   }
 
-  // ===== SKILLS & CERTIFICATES =====
   .skills-certificados__container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .skills {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .skills__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
-
-    .skills {
-      order: 1;
-      width: 100%;
-    }
-
-    .certificados {
-      order: 2;
-      width: 100%;
-    }
+    padding: 0 1rem;
   }
 
-  .skills__title {
-    font-size: $normal-font-size;
+  .skills__content {
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
   }
+
+  .skills__header {
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+  
 
   .qualification__data {
     gap: 0.5rem;
@@ -233,8 +262,6 @@
   }
 }
 
-
-
 // 👉 Celulares grandes / phablets (568px – 767px)
 @media screen and (min-width: 568px) and (max-width: 767px) {
   body {
@@ -246,7 +273,6 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     width: 100%;
-    background-color: var(--body-color);
     z-index: 1000;
     padding: 1rem;
   }
@@ -272,7 +298,7 @@
     bottom: -100%;
     left: 0;
     width: 100%;
-    background-color: var(--body-color);
+
     padding: 2rem 1.5rem 4rem;
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
@@ -297,7 +323,6 @@
     right: 1.5rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--first-color);
     z-index: 1001;
   }
 
@@ -331,36 +356,59 @@
   .home__container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 3rem 2rem;
     align-items: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    gap: 1.5rem;
   }
+  
+  .home__data {
+    order: 1;
+    max-width: 90%;
+  }
+  
+  .home__blob {
+    order: 2;
+    width: 180px;
+    max-width: 60vw;
+    margin-top: 1rem;
+  }
+  
 
   .home__img {
     justify-self: center;
     width: 220px;
   }
 
-  .home__data {
-    text-align: center;
-    max-width: 100%;
-  }
-
   .skills-certificados__container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
     padding: 2rem 1rem;
+  }
 
-    .skills {
-      order: 1;
-      width: 100%;
-    }
+  .skills {
+    width: 100%;
+    max-width: 100%;
+  }
 
-    .certificados {
-      order: 2;
-      width: 100%;
-    }
+  .skills__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .skills__content {
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .skills__header {
+    justify-content: flex-start;
+    gap: 0.75rem;
   }
 
   .qualification__sections {
@@ -436,7 +484,6 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     width: 100%;
-    background-color: var(--body-color);
     padding: 1rem;
     z-index: 1000;
     position: relative;
@@ -446,7 +493,6 @@
     display: block !important;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--first-color);
     z-index: 1001;
   }
 
@@ -478,7 +524,6 @@
     bottom: -100%;
     left: 0;
     width: 100%;
-    background-color: var(--body-color);
     padding: 2rem 1.5rem 4rem;
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
@@ -498,7 +543,6 @@
     right: 1.5rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--first-color);
     z-index: 1001;
   }
 
@@ -521,11 +565,6 @@
 
   .nav__arrow {
     display: inline-block;
-    transition: transform 0.3s ease;
-  }
-
-  .arrow-rotated {
-    transform: rotate(180deg);
   }
 
   .home__container {
@@ -629,8 +668,6 @@
     align-items: center;
     justify-content: center;
     column-gap: 1.5rem;
-    background-color: var(--first-color-second);
-    border-radius: 1rem;
     padding: 3rem 2rem 0;
   }
 
@@ -693,7 +730,6 @@
     align-items: center;
     height: calc(#{$header-height} + 1rem);
     padding: 1rem 2rem;
-    background-color: var(--body-color);
     position: relative;
     z-index: 1000;
   }
@@ -751,21 +787,32 @@
     transform: translateX(-6rem);
   }
 
-  .skills-certificados__container {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-
-    .skills {
-      order: 1;
-      width: 100%;
+  @media screen and (min-width: 1024px) {
+    .skills-certificados__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 2rem;
+      padding-left: 2rem;
     }
-
-    .certificados {
-      order: 2;
+  
+    .skills {
       width: 100%;
+      max-width: 500px;
+      text-align: left;
+    }
+  
+    .certificados {
+      width: 100%;
+      max-width: 600px;
+    }
+  
+    .skills__title {
+      text-align: left;
     }
   }
+  
 
   .certificados .qualification__container {
     padding-left: 2rem;
