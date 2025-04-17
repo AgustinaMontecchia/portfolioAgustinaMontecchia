@@ -8,27 +8,30 @@
   align-items: center;
   position: relative;
   background-color: var(--body-color);
-  padding: 1rem 1.5rem;
-  z-index: 1000;
+  padding: $space-sm $space-lg;
+  z-index: $z-fixed;
+  width: 100%;
 }
 
 .nav__logo {
   display: flex;
-  flex-direction: column; // 👈 esto fuerza que el span baje
+  flex-direction: column;
   align-items: center;
   font-family: var(--title-font);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: var(--h2-font-size);
+  font-weight: $font-semi-bold;
   color: var(--first-color);
   text-align: center;
+  margin: $space-xs;
+  padding: $space-xs;
 
   span {
-    font-size: 0.75rem;
+    white-space: nowrap; // ✅ evita el corte de línea
+    font-size: var(--smaller-font-size);
     color: var(--text-color-light);
-    margin-top: 0.1rem;
+    line-height: 1;
   }
 }
-
 
 .nav__menu {
   position: fixed;
@@ -36,14 +39,15 @@
   left: 0;
   width: 100%;
   background-color: var(--body-color);
-  padding: 2rem 1.5rem 4rem;
+  padding: $space-md $space-sm $space-xl;
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 1.5rem 1.5rem 0 0;
+  border-radius: $space-md $space-md 0 0;
   transition: bottom 0.4s ease;
-  z-index: 1000;
+  z-index: $z-fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: $space-xs;
 }
 
 .show-menu {
@@ -53,8 +57,9 @@
 .nav__list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: $space-md;
   align-items: center;
+  padding-left: $space-sm;
 }
 
 .nav__link {
@@ -62,10 +67,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--small-font-size);
+  font-size: var(--smaller-font-size);
   color: var(--text-color);
-  font-weight: 600;
-  gap: 0.25rem;
+  font-weight: $font-semi-bold;
   z-index: 1;
 
   &::after {
@@ -93,7 +97,7 @@
     top: -1.2rem;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.9rem;
+    font-size: var(--small-font-size);
     color: var(--first-color);
     animation: beat 1.5s infinite;
     z-index: 2;
@@ -107,12 +111,12 @@
 
   .nav__link {
     display: flex;
-    gap: 0.25rem;
+    gap: $space-xs;
   }
 
   .nav__arrow {
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: var(--small-font-size);
     transition: transform 0.3s ease;
   }
 
@@ -123,7 +127,7 @@
   .nav__submenu {
     display: none;
     flex-direction: column;
-    padding-left: 1.5rem;
+    padding-left: $space-md;
     background: transparent;
     box-shadow: none;
     position: static;
@@ -136,51 +140,25 @@
       font-size: var(--smaller-font-size);
     }
   }
-
-  // 🔒 Hover solo en pantallas grandes
-  @media screen and (min-width: 1024px) {
-    &:hover .nav__submenu {
-      display: flex;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: var(--container-color);
-      padding: 0.5rem 0;
-      border-radius: 0.25rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      min-width: 180px;
-
-      .nav__link {
-        padding: 0.5rem 1rem;
-        width: 100%;
-        text-align: left;
-      }
-    }
-
-    .nav__arrow {
-      display: none;
-    }
-  }
 }
 
 .nav__toggle {
   display: block;
-  font-size: 1.5rem;
+  font-size: var(--h2-font-size);
   color: var(--first-color);
   cursor: pointer;
-  z-index: 1001;
+  z-index: $z-tooltip;
 }
 
 .nav__close {
   display: block;
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  font-size: 1.5rem;
+  top: $space-sm;
+  right: $space-md;
+  font-size: var(--h2-font-size);
   cursor: pointer;
   color: var(--first-color);
-  z-index: 1001;
+  z-index: $z-tooltip;
 
   &:hover {
     color: var(--first-color-alt);
@@ -189,15 +167,15 @@
 
 .nav__btns {
   display: flex;
-  gap: 1rem;
+  gap: $space-sm;
   align-items: center;
-  z-index: 1001;
+  z-index: $z-tooltip;
 }
 
 #theme-button,
 #agus-theme-button,
 #language-button {
-  font-size: 1.25rem;
+  font-size: var(--h2-font-size);
   color: var(--first-color);
   cursor: pointer;
   transition: transform 0.3s ease;

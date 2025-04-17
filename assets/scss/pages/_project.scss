@@ -3,9 +3,10 @@
 // ====================
 
 .project__bg {
-  background-color: var(--first-color-light); 
-  padding: 3rem 2rem;
-  border-radius: 1rem;
+  background-color: var(--first-color-light);
+  padding: $space-xs;
+  margin: $space-xs;
+  border-radius: $space-lg;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s ease;
 }
@@ -15,31 +16,37 @@
   grid-template-columns: 1fr auto;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  padding: $space-xs;
+  margin: $space-xs;
 }
 
 .project__data {
   text-align: left;
   justify-self: start;
   max-width: 500px;
+  padding: $space-xs;
+  margin: $space-xs;
 }
 
 .project__title {
   font-size: var(--h2-font-size);
-  margin-bottom: 0.75rem;
+  padding: $space-xs;
+  margin: $space-xs;
   color: var(--title-color);
   text-align: start;
 }
 
 .project__subtitle {
   font-size: var(--h3-font-size);
-  margin-bottom: 0.75rem;
+  padding: $space-xs;
+  margin: $space-xs;
   color: var(--title-color);
   text-align: start;
 }
 
 .project__description {
-  margin-bottom: 1.5rem;
+  padding: $space-xs;
+  margin: $space-xs;
   color: var(--text-color);
   font-size: var(--normal-font-size);
   text-align: start;
@@ -50,6 +57,9 @@
   max-width: 250px;
   height: auto;
   justify-self: end;
+  padding: $space-xs;
+  margin: $space-xs;
+  transition: transform 0.3s ease;
 
   &:hover {
     transform: scale(1.05);

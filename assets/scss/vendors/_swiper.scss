@@ -20,33 +20,25 @@
 // ===============================
 // 🎯 PAGINACIÓN - GENERAL
 // ===============================
+
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background-color: $text-color-light;
+  background-color: var(--text-color-light);
   opacity: 1;
   margin: 0 4px;
   transition: background-color 0.3s ease;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: $first-color;
+  background-color: var(--first-color);
 }
 
 // ===============================
 // 🎯 SOPORTE PARA TEMAS
 // ===============================
 
-body.dark-theme {
-  .swiper-pagination-bullet {
-    background-color: var(--text-color-light);
-  }
-
-  .swiper-pagination-bullet-active {
-    background-color: var(--first-color);
-  }
-}
-
+body.dark-theme,
 body.agus-theme {
   .swiper-pagination-bullet {
     background-color: var(--text-color-light);
@@ -60,9 +52,10 @@ body.agus-theme {
 // ===============================
 // 🖼 PORTFOLIO
 // ===============================
+
 .swiper-pagination-portfolio {
   position: absolute;
-  bottom: 1rem;
+  bottom: $space-sm;
   left: 0;
   width: 100%;
   text-align: center;
@@ -80,9 +73,11 @@ body.agus-theme {
 // ===============================
 // 👤 TESTIMONIOS
 // ===============================
+
 .testimonial__container {
   position: relative;
-  padding-bottom: 3rem;
+  padding: $space-sm 0 $space-xl;
+  margin: $space-xs;
 }
 
 .testimonial__content {
@@ -98,37 +93,38 @@ body.agus-theme {
 .testimonial__header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: $mb-1;
+  padding: $space-xs;
+  margin: $space-xs;
 }
 
 .testimonial__img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  margin-right: $mb-0-75;
+  margin-right: clamp(0.5rem, 0.6rem + 0.2vw, 0.75rem);
 }
 
 .testimonial__name {
-  font-size: $h3-font-size;
+  font-size: var(--h3-font-size);
   font-weight: $font-medium;
 }
 
 .testimonial__client {
-  font-size: $small-font-size;
-  color: $text-color-light;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
 }
 
 .testimonial__description {
-  margin-bottom: $mb-2-5;
+  margin-bottom: $space-xl;
 }
 
 .testimonial__icon-star {
-  color: $first-color;
+  color: var(--first-color);
 }
 
 .swiper-pagination-testimonial {
   position: absolute;
-  bottom: 1rem;
+  bottom: $space-sm;
   left: 0;
   width: 100%;
   text-align: center;

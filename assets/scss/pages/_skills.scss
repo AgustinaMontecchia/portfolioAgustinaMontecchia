@@ -1,22 +1,27 @@
 // ====================
 // 💡 SKILLS
 // ====================
+
 .skills__container {
   row-gap: 0;
-  margin-left: 9rem;
-  margin-top: 1rem;
+  padding: $space-xs;
+  margin: $space-xs;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .skills__header {
   display: flex;
   align-items: center;
-  margin-bottom: 2.5rem;
+  padding: $space-xs;
+  margin: $space-xs;
   cursor: pointer;
 }
 
 .skills__icon,
 .skills__arrow {
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 1.5rem + 0.5vw, 2rem);
   color: var(--first-color);
 }
 
@@ -26,19 +31,19 @@
 }
 
 .skills__list {
-  row-gap: 1.5rem;
-  padding-left: 1rem;
+  row-gap: $space-md;
+  padding-left: $space-sm;
 }
 
 .skills__titles {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  margin-bottom: $space-xs;
 }
 
 .skills__name {
   font-size: var(--normal-font-size);
-  font-weight: 500;
+  font-weight: $font-medium;
   color: var(--title-color);
 }
 
@@ -59,9 +64,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 500;
+  padding-right: $space-xs;
+  font-size: var(--smaller-font-size);
+  font-weight: $font-medium;
   color: #fff;
 }
 
@@ -71,7 +76,7 @@
 
 .skills__open .skills__list {
   height: max-content;
-  margin-bottom: 2.5rem;
+  margin-bottom: $space-xl;
 }
 
 .skills__close .skills__list {
@@ -82,7 +87,8 @@
 .skills-certificados__container {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  padding: $space-xs;
+  margin: $space-xs;
   max-width: 100%;
 
   > div {
@@ -93,6 +99,8 @@
 .skills,
 .certificados {
   width: 100%;
+  padding: $space-xs;
+  margin: $space-xs;
 }
 
 .skills__title {
@@ -108,14 +116,14 @@
 .skills__icon--highlight {
   color: var(--first-color);
   transition: transform 0.3s ease;
-  margin-right: 1rem;
+  margin-right: $space-sm;
 
   &:hover {
     transform: scale(1.2) rotate(5deg);
   }
 }
 
-// Barras individuales por tecnología
+// ✅ Barras individuales por tecnología
 .skills__html     { width: 90%; }
 .skills__css      { width: 90%; }
 .skills__js       { width: 60%; }

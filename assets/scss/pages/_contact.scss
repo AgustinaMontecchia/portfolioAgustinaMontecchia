@@ -3,35 +3,39 @@
 // ====================
 
 .contact__container {
-  row-gap: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: $space-xs;
+  margin: $space-xs;
+  align-items: start;
 }
 
 .contact__information {
   display: flex;
-  margin: 2rem;
+  align-items: flex-start;
+  padding: $space-xs;
+  margin: $space-xs;
 }
 
 .contact__icon {
-  font-size: 2rem;
+  font-size: var(--h2-font-size);
   color: var(--first-color);
-  margin-right: 0.75rem;
+  padding: $space-xs;
+  margin: $space-xs;
 }
 
-.contact__title {
-  font-size: var(--h3-font-size);
-  font-weight: var(--font-medium);
-  color: var(--title-color);
-}
-
-.contact__subtitle {
-  font-size: var(--small-font-size);
-  color: var(--text-color-light);
+.contact__form {
+  display: grid;
+  row-gap: $space-md;
 }
 
 .contact__content {
+  display: flex;
+  flex-direction: column;
   background-color: var(--input-color);
-  border-radius: 1rem;
-  padding: 1rem 1.5rem;
+  border-radius: $space-lg;
+  padding: $space-xs;
+  margin: $space-xs;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   opacity: 0;
   transform: translateY(20px);
@@ -48,33 +52,53 @@
 }
 
 .contact__label {
-  font-weight: var(--font-medium);
   font-size: var(--small-font-size);
-  margin-bottom: 0.5rem;
-  display: block;
   color: var(--title-color);
+  padding: 0.1rem;
+  margin: 0.1rem;
+  font-weight: $font-semi-bold;
 }
 
 .contact__input {
-  background-color: transparent;
-  width: 100%;
+  padding: clamp(0.6rem, 0.5rem + 0.5vw, 0.75rem) clamp(0.8rem, 0.6rem + 0.6vw, 1rem);
+  border: 2px solid var(--first-color-light);
+  border-radius: $space-sm;
+  background-color: var(--input-color);
   font-size: var(--normal-font-size);
-  border: none;
-  outline: none;
   color: var(--text-color);
-  border-bottom: 2px solid var(--first-color);
-  padding: 0.5rem;
-  transition: border-color 0.3s ease, color 0.3s ease;
+  transition: border-color 0.3s ease;
 
   &:focus {
-    border-color: var(--first-color-alt);
+    border-color: var(--first-color);
+    outline: none;
   }
 }
 
+.contact__inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-md;
+}
+
 .contact__message {
-  margin-bottom: 1.5rem;
-  color: var(--first-color);
-  font-weight: var(--font-medium);
   text-align: center;
+  color: var(--first-color);
+  font-weight: $font-semi-bold;
+  margin-top: $space-sm;
   display: none;
+}
+
+.contact__message.show {
+  display: block;
+}
+
+.contact__phrase {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  padding: $space-xs;
+  margin: $space-xs;
+  font-style: italic;
+  opacity: 0.9;
 }

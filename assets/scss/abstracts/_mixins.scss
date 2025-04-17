@@ -1,6 +1,12 @@
 // ====================
 // 🧩 MIXINS GENERALES
 // ====================
+
+@mixin spacing($space) {
+  padding: $space;
+  margin: $space;
+}
+
 // 🎯 Centrado absoluto
 @mixin center-absolute {
   position: absolute;

@@ -2,16 +2,21 @@
 // 🧑‍💼 ABOUT
 // ====================
 
+.about__container {
+  padding: $space-xs;
+  margin: $space-xs;
+}
+
 .about__img {
   width: 200px;
-  border-radius: 0.5rem;
+  border-radius: $space-sm;
   justify-self: center;
   align-self: center;
 }
 
 .about__description {
   text-align: center;
-  margin-bottom: var(--mb-2-5);
+  margin-bottom: $space-lg;
   color: var(--text-color);
   font-size: var(--normal-font-size);
 }
@@ -22,23 +27,43 @@
   line-height: 1.6;
   color: var(--text-color);
   border-left: 2px solid var(--first-color);
-  padding-left: 1rem;
+  padding-left: $space-sm;
   font-style: italic;
-  margin: 1rem 0 2rem;
+  margin: $space-sm 0 $space-md;
+}
+
+.about__toggle {
+  margin: $space-sm 0;
+  font-weight: $font-semi-bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  i {
+    margin-left: $space-xs;
+    transition: transform 0.3s ease;
+  }
+
+  &.open i {
+    transform: rotate(180deg);
+  }
+}
+
+.about__full-story.hidden {
+  display: none;
 }
 
 .about__info {
   display: flex;
   justify-content: space-evenly;
-  margin: 1rem;
-  padding-top: 1rem;
+  margin: $space-sm;
+  padding-top: $space-sm;
 }
 
 .about__info-title {
   display: block;
   text-align: center;
   font-size: var(--h2-font-size);
-  font-weight: 600;
+  font-weight: $font-semi-bold;
   color: var(--title-color);
 }
 
@@ -51,4 +76,64 @@
 .about__buttons {
   display: flex;
   justify-content: center;
+}
+
+// ========= TABS SOBRE MÍ =========
+
+.about-tabs {
+  text-align: center;
+
+  .tabs__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $space-sm;
+    padding: $space-xs;
+    margin: $space-xs;
+    flex-wrap: wrap;
+
+    .tab-btn {
+      padding: $space-xs $space-md;
+      border-radius: $space-lg;
+      border: 2px solid var(--first-color-light);
+      background-color: transparent;
+      font-weight: $font-semi-bold;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--first-color);
+        color: #fff;
+      }
+
+      &.active {
+        background-color: var(--first-color);
+        color: #fff;
+        border-color: var(--first-color);
+      }
+    }
+  }
+}
+
+// ========= CONTENIDO DE TABS =========
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+  display: grid;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

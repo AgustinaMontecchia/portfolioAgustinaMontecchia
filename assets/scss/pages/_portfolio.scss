@@ -4,7 +4,7 @@
 
 .portfolio__container {
   position: relative;
-  padding-bottom: 3rem;
+  padding-bottom: $space-xl;
   background-color: var(--body-color);
   color: var(--text-color);
 }
@@ -13,14 +13,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 2rem;
-  padding: 0 1.5rem;
+  gap: $space-md;
+  padding: 0 $space-md;
 }
 
 .portfolio__img {
   width: 100%;
   max-width: 265px;
-  border-radius: 0.5rem;
+  border-radius: $space-sm;
   object-fit: cover;
   justify-self: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
@@ -28,31 +28,31 @@
 
 .portfolio__title {
   font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-0-5);
+  margin-bottom: $space-xs;
   color: var(--title-color);
 }
 
 .portfolio__description {
-  margin-bottom: var(--mb-0-75);
+  margin-bottom: $space-sm;
   color: var(--text-color);
 }
 
 .portfolio__data {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: $space-sm;
 }
 
 .portfolio__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: $space-xs;
   background-color: var(--first-color);
   color: var(--container-color);
-  font-weight: 500;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
+  font-weight: $font-medium;
+  padding: clamp(0.6rem, 0.5rem + 0.5vw, 0.75rem) clamp(1rem, 0.8rem + 0.5vw, 1.25rem);
+  border-radius: $space-sm;
   font-size: var(--normal-font-size);
   transition: background-color 0.3s ease, transform 0.2s ease;
 
@@ -62,7 +62,7 @@
   }
 
   .button__icon {
-    font-size: 1rem;
+    font-size: var(--small-font-size);
     transition: transform 0.3s ease;
   }
 

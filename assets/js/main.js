@@ -271,4 +271,45 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   updateLanguage(currentLang);
+
+    /*==================== TOGGLE ABOUT STORY ====================*/
+    const toggleBtn = document.getElementById("toggle-story");
+    const fullStory = document.getElementById("full-story");
+  
+    if (toggleBtn && fullStory) {
+      toggleBtn.addEventListener("click", () => {
+        fullStory.classList.toggle("hidden");
+        toggleBtn.classList.toggle("open");
+  
+        const span = toggleBtn.querySelector("span");
+        const lang = currentLang || 'es';
+  
+        if (fullStory.classList.contains("hidden")) {
+          span.textContent = lang === 'es' ? "Quiero conocer tu historia" : "Tell me your story";
+        } else {
+          span.textContent = lang === 'es' ? "Ocultar historia" : "Hide story";
+        }
+      });
+    }
+  
+  /*==================== ABOUT TABS (Curiosidades & Valores) ====================*/
+  const aboutTabButtons = document.querySelectorAll('.tab-btn');
+  const aboutTabContents = document.querySelectorAll('.tab-content');
+
+  aboutTabButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    aboutTabButtons.forEach(b => b.classList.remove('active'));
+    aboutTabContents.forEach(tc => tc.classList.remove('active'));
+
+    btn.classList.add('active');
+    const targetId = btn.getAttribute('data-target');
+    const targetContent = document.querySelector(targetId);
+    if (targetContent) {
+      targetContent.classList.add('active');
+    }
+  });
+  });
+
+
+  
 });

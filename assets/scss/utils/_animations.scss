@@ -2,7 +2,7 @@
 // 🎞️ ANIMACIONES GENERALES
 // ===========================
 
-// Fade In Up (entrada suave desde abajo)
+// 📍 Fade In Up (entrada suave desde abajo)
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
@@ -14,27 +14,31 @@
   transform: translateY(0);
 }
 
-// Fade In Left
+// 📍 Fade In Left
 @keyframes fadeInLeft {
   from {
+    opacity: 0;
     transform: translateX(-30px);
   }
   to {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 
-// Fade In Right
+// 📍 Fade In Right
 @keyframes fadeInRight {
   from {
+    opacity: 0;
     transform: translateX(30px);
   }
   to {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 
-// Beat Heart Animation
+// ❤️ Beat Heart Animation
 @keyframes beat {
   0%, 100% {
     transform: scale(1);
@@ -44,7 +48,7 @@
   }
 }
 
-// Clase reutilizable para usar el beat
+// 🫀 Clase reutilizable para latido
 .beat {
   animation: beat 1.5s infinite;
 }

@@ -12,12 +12,8 @@
     @return rgba($color, $opacity);
   }
   
-  // 📐 Clamp de tipografía para tamaños responsivos
-  @function fluid-font($min, $max, $min-width: 320px, $max-width: 1200px) {
-    @return clamp(
-      #{$min},
-      calc(#{$min} + (#{$max} - #{$min}) * ((100vw - #{$min-width}) / (#{$max-width} - #{$min-width}))),
-      #{$max}
-    );
-  }
+  // 📐 Clamp general para tamaños fluidos (tipografía, paddings, gaps, etc.)
+  
+  
+
   

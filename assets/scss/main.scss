@@ -1,15 +1,14 @@
 // main.scss - Archivo principal de SASS
 
 // Abstracts
+@import './abstracts/functions';
 @import './abstracts/variables';
 @import './abstracts/mixins';
-@import './abstracts/functions';
 
 // Base
 @import './base/reset';
 @import './base/typography';
 @import './base/base';
-@import './base/responsive-root';
 
 
 // Utils

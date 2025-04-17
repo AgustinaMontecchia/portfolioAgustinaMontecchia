@@ -1,18 +1,17 @@
 // =======================
 // 🧢 HEADER
 // =======================
+
 .header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: $z-fixed;
-    background-color: var(--body-color);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease-in-out;
-  }
-  
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: $z-fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $space-sm;
+  background-color: var(--body-color); // Por si necesitas que no sea transparente
+  transition: all 0.3s ease-in-out;
+}

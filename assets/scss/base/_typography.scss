@@ -16,24 +16,30 @@ h4 {
   font-family: var(--title-font);
   color: var(--title-color);
   font-weight: $font-semi-bold;
+  line-height: 1.3;
   transition: color 0.3s ease;
 }
 
+// 🔠 Títulos de secciones principales
 .section__title,
 .skills__title,
 .services__title,
 .qualification__title,
 .project__title,
 .footer__title {
+  font-family: var(--title-font);
   font-weight: $font-semi-bold;
   color: var(--title-color);
   transition: color 0.3s ease;
 }
 
+// 📋 Listas sin estilo por defecto
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
+// 🔗 Enlaces sin subrayado ni color heredado
 a {
   text-decoration: none;
   color: inherit;

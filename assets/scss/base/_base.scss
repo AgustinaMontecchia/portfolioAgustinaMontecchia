@@ -8,7 +8,6 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  display: block;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -17,11 +16,11 @@ main {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 $space-sm;
 }
 
 .section {
-  padding: 2rem 0 4rem;
+  padding: $space-lg 0 $space-xl;
 }
 
 .section__title {
@@ -29,17 +28,17 @@ main {
   color: var(--title-color);
   text-align: center;
   transition: color 0.3s ease;
-  margin-bottom: 1rem;
+  margin-bottom: $space-sm;
 }
 
 .section__subtitle {
   display: block;
   font-size: var(--normal-font-size);
-  margin: 1rem; 
+  margin: $space-sm;
   text-align: center;
   color: var(--text-color);
   transition: color 0.3s ease;
-  font-style: $font-semi-bold;
+  font-weight: $font-semi-bold;
 }
 
 img {

@@ -1,66 +1,54 @@
 // ============================
-// 🎨 VARIABLES CSS PARA :root (modificables con clases)
+// 🎨 VARIABLES CSS PARA :root 
 // ============================
 :root {
-  // 🎨 Colores principales (tema claro pastel)
-  --first-color: hsl(175, 45%, 35%);         // #31827C
-  --first-color-second: hsl(120, 38%, 68%);   // #95C68F
-  --first-color-alt: hsl(6, 94%, 75%);        // #FC8A80
-  --first-color-light: hsl(305, 100%, 88%);   // tono suave intermedio
-  --first-color-lighter: hsl(49, 77%, 85%);   // #F7E9AA
+  // 🎨 Colores principales 
+  --first-color: hsl(330, 65%, 85%);
+  --first-color-second: white;
+  --first-color-alt: hsl(275, 40%, 70%);
+  --first-color-light: hsl(305, 100%, 88%);
+  --first-color-lighter: hsl(49, 77%, 85%);
 
   // 🌿 Colores estructurales
-  --body-color: hsl(49, 100%, 96%);           // fondo general
-  --container-color: hsl(120, 40%, 90%);      // secciones, tarjetas
-  --input-color: hsl(175, 45%, 96%);          // inputs
+  --body-color: hsl(30, 60%, 92%);
+  --container-color: hsl(220, 20%, 92%);
+  --input-color: hsl(175, 45%, 96%);
 
   // 🖋 Colores de texto
   --title-color: hsl(175, 45%, 20%);
-  --text-color: hsl(175, 20%, 25%);
+  --text-color: hsl(20, 25%, 30%);
   --text-color-light: hsl(175, 15%, 50%);
-
-  // 🧭 Scroll
-  --scroll-bar-color: hsl(49, 80%, 92%);
-  --scroll-thumb-color: hsl(6, 94%, 75%);
 
   // 🖋 Tipografía
   --body-font: 'Nunito', sans-serif;
   --title-font: 'Manrope', sans-serif;
-  
-  // 📏 Tamaños de fuente
-  --big-font-size: 2rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
- }
-  
+
+  // 📏 Tamaños de fuente fluidos
+  --big-font-size: clamp(1.5rem, 1.2rem + 2.5vw, 3rem);         // antes 1.8
+  --h1-font-size: clamp(1.25rem, 1.1rem + 1.2vw, 2.25rem);      // antes 1.5
+  --h2-font-size: clamp(1.1rem, 1rem + 0.6vw, 1.5rem);          // antes 1.25
+  --h3-font-size: clamp(1rem, 0.95rem + 0.3vw, 1.25rem);        // antes 1.125
+  --normal-font-size: clamp(0.875rem, 0.85rem + 0.3vw, 1rem);   // antes 0.938
+  --small-font-size: clamp(0.75rem, 0.72rem + 0.25vw, 0.875rem); // antes 0.813
+  --smaller-font-size: clamp(0.68rem, 0.7rem + 0.2vw, 0.813rem); // casi igual
+}
+
   // ============================
   // 💎 VARIABLES SASS (para utilidades internas)
   // ============================
-  $hue-color: 315;
-  $header-height: 3rem;
-  
-  // Paleta HSL para cálculos o mezclas
-  $first-color: hsl($hue-color, 30%, 65%);
-  $text-color-light: hsl(210, 10%, 60%);
+  // =========================
+  // 📏 ESPACIADOS RESPONSIVOS
+  // =========================
 
-  // Tamaños tipográficos
-  $h3-font-size: 1.125rem;
-  $small-font-size: 0.813rem;
-  
+  $space-xs: clamp(0.25rem, 0.15rem + 0.5vw, 0.5rem);     // muy pequeño
+  $space-sm: clamp(0.5rem, 0.3rem + 0.6vw, 1rem);         // pequeño
+  $space-md: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);        // medio
+  $space-lg: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);         // grande
+  $space-xl: clamp(2rem, 1.5rem + 2vw, 4rem);             // extra grande
+
   // Peso tipográfico
   $font-medium: 500;
   $font-semi-bold: 600;
-  
-  // Margenes inferiores
-  $mb-0-25: 0.25rem;
-  $mb-0-75: 0.75rem;
-  $mb-1: 1rem;
-  $mb-1-5: 1.5rem;
-  $mb-2-5: 2.5rem;
   
   // Z-index
   $z-tooltip: 10;

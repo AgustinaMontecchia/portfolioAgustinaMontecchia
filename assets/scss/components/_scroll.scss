@@ -15,14 +15,14 @@
 }
 
 .home__scroll-name {
-  font-size: var(--small-font-size);
+  font-size: var(--small-font-size); // ✅ Usa variable de fuente fluida
   color: var(--title-color);
   font-weight: $font-medium;
-  margin-right: $mb-0-25;
+  margin-right: $space-xs; // ✅ Usa espacio responsivo
 }
 
 .home__scroll-arrow {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1vw, 1.25rem); // ✅ Lo pasamos a clamp directo
 }
 
 // ==========================
@@ -30,11 +30,11 @@
 // ==========================
 .scrollup {
   position: fixed;
-  right: 1rem;
+  right: $space-sm;
   bottom: -20%;
   background-color: var(--first-color);
   opacity: 0.8;
-  padding: 0 0.3rem;
+  padding: 0 $space-xs; // ✅ Espacio responsivo
   border-radius: 0.4rem;
   z-index: $z-tooltip;
   transition: 0.4s;
@@ -51,7 +51,7 @@
 }
 
 .show-scroll {
-  bottom: 5rem;
+  bottom: $space-lg; // ✅ Usa un espaciado responsivo grande
 }
 
 // ==========================

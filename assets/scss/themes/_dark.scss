@@ -3,7 +3,7 @@
 // ===========================
 
 body.dark-theme {
-  // 🎨 Paleta de colores
+  // 🎨 Paleta de colores principal
   --first-color: hsl(315, 35%, 60%);
   --first-color-second: hsl(315, 20%, 25%);
   --first-color-alt: hsl(315, 25%, 45%);
@@ -17,7 +17,7 @@ body.dark-theme {
   --container-color: hsl(315, 15%, 16%);
   --input-color: hsl(315, 15%, 20%);
 
-  // 🎛️ Scroll
+  // 🎛️ Scroll personalizado
   --scroll-bar-color: hsl(315, 15%, 30%);
   --scroll-thumb-color: hsl(315, 25%, 75%);
 }
