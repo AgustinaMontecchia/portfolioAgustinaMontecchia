@@ -60,7 +60,8 @@
 }
 
 .contact__input {
-  padding: clamp(0.6rem, 0.5rem + 0.5vw, 0.75rem) clamp(0.8rem, 0.6rem + 0.6vw, 1rem);
+  padding: clamp(0.6rem, 0.5rem + 0.5vw, 0.75rem)
+    clamp(0.8rem, 0.6rem + 0.6vw, 1rem);
   border: 2px solid var(--first-color-light);
   border-radius: $space-sm;
   background-color: var(--input-color);

@@ -19,7 +19,6 @@
   footer {
     max-width: 100vw;
     overflow-x: hidden;
-    
   }
   // ===== NAVIGATION =====
   .nav {
@@ -51,7 +50,7 @@
     flex-direction: column;
     align-items: center;
 
-    &.show-menu{
+    &.show-menu {
       display: flex;
       bottom: 0;
     }
@@ -94,7 +93,7 @@
   // ===== HOME =====
   .home__container {
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
   }
 
   .home__data {
@@ -121,13 +120,13 @@
     align-items: stretch !important;
     gap: 1rem;
   }
-  
+
   .curiosity__item {
     width: 100% !important;
     box-sizing: border-box;
     text-align: center;
   }
-    
+
   .skills-certificados__container {
     flex-direction: column;
   }
@@ -154,18 +153,18 @@
   .services__container {
     grid-template-columns: 1fr !important;
   }
-  
+
   .services__content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
-    text-align: center;      
+    justify-content: center;
+    text-align: center;
   }
   // ===== PROJECT =====
   .project__img {
     width: 100%;
-    max-width: 220px; 
+    max-width: 220px;
   }
   // ===== TESTIMONIAL =====
   .testimonial__data,
@@ -198,15 +197,13 @@
   .footer__container {
     position: relative;
   }
-  
+
   .footer__socials {
     position: absolute;
     top: 1rem;
     right: 1rem;
     display: flex;
-    
   }
-  
 }
 
 @media screen and (min-width: 568px) and (max-width: 767px) {
@@ -220,18 +217,16 @@
     align-items: center;
     width: 100%;
     z-index: 1000;
-    
   }
 
   .nav__logo {
     justify-self: center;
-    
   }
 
   .nav__btns {
     display: flex;
     justify-self: end;
-    
+
     z-index: 1001;
     max-width: 100%;
     overflow: hidden;
@@ -250,7 +245,6 @@
 
   .nav__menu.show-menu {
     display: flex;
-    
   }
 
   .nav__toggle {
@@ -259,21 +253,18 @@
 
   .nav__close {
     position: absolute;
-    
-    
+
     z-index: 1001;
   }
 
   .nav__list {
     flex-direction: column;
-    
   }
 
   .nav__submenu {
     display: none;
     flex-direction: column;
-    
-    
+
     box-shadow: none;
     position: static;
 
@@ -296,7 +287,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
   }
 
   .home__data {
@@ -308,7 +298,6 @@
     order: 2;
     width: 180px;
     max-width: 60vw;
-    
   }
 
   .home__img {
@@ -317,18 +306,18 @@
   }
 
   .values__container {
-    grid-template-columns: 1fr 1fr; 
-    max-width: 100%;               
-    overflow-x: hidden;           
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    overflow-x: hidden;
     padding-inline: $space-sm;
   }
 
   .value__item {
-    width: 100%;                  
+    width: 100%;
   }
   .skills-certificados__container {
     flex-direction: column;
-    
+
     align-items: center;
 
     .skills,
@@ -350,19 +339,16 @@
 
   .skills__header {
     justify-content: flex-start;
-    
   }
 
   .qualification__sections {
     display: flex;
     flex-direction: column;
-    
   }
 
   .services__container {
     grid-template-columns: 1fr;
     justify-content: center;
-    
   }
 
   .testimonial__data,
@@ -372,11 +358,8 @@
     text-align: center;
   }
 
-  
-
   .portfolio__content {
     grid-template-columns: 1fr;
-    
   }
 
   .contact__container {
@@ -387,14 +370,13 @@
     max-width: 100%;
     overflow-x: hidden;
   }
-  
+
   .contact__inputs {
     grid-template-columns: 1fr !important;
     width: 100%;
     max-width: 100%;
   }
-  
-  
+
   .contact__form {
     width: 100%;
     max-width: 100%;
@@ -404,12 +386,11 @@
     align-items: center;
     gap: $space-sm;
   }
-  
-  
+
   .footer__container {
     position: relative;
   }
-  
+
   .footer__socials {
     position: absolute;
     top: 1rem;
@@ -417,8 +398,6 @@
     display: flex;
     gap: 1rem;
   }
-  
-  
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -482,7 +461,7 @@
   .nav__list {
     display: flex;
     flex-direction: column;
-    
+
     text-align: center;
   }
 
@@ -522,7 +501,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: start;
-    
+
     > div {
       text-align: left;
     }
@@ -535,7 +514,7 @@
   .skills-certificados__container {
     display: flex;
     flex-direction: column;
-    
+
     .skills {
       width: 100%;
     }
@@ -546,7 +525,6 @@
   .skills__container {
     display: flex;
     flex-direction: column;
-    
   }
 
   .qualification__tabs {
@@ -590,7 +568,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
   .footer__links {
-    flex-direction: row; 
+    flex-direction: row;
   }
   .footer__socials {
     justify-self: flex-end;
@@ -638,9 +616,9 @@
 
   .nav__btns {
     display: flex !important;
-    align-items: center; 
+    align-items: center;
   }
-  .nav__dropdown{
+  .nav__dropdown {
     &:hover .nav__submenu {
       display: flex;
       position: absolute;
@@ -683,10 +661,9 @@
 
   .portfolio__content {
     grid-template-columns: repeat(2, 1fr);
-    
   }
 
   .contact__inputs {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
   }
 }

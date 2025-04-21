@@ -52,7 +52,11 @@
 }
 
 .qualification__icon {
-  font-size: clamp(1.5rem, 1.4rem + 0.5vw, 1.8rem); // tamaño icónico personalizado
+  font-size: clamp(
+    1.5rem,
+    1.4rem + 0.5vw,
+    1.8rem
+  ); // tamaño icónico personalizado
   margin-right: $space-xs;
   color: var(--first-color);
 }

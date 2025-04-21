@@ -58,7 +58,11 @@
 
 .skills__percentage {
   height: 100%;
-  background: linear-gradient(90deg, var(--first-color), var(--first-color-alt));
+  background: linear-gradient(
+    90deg,
+    var(--first-color),
+    var(--first-color-alt)
+  );
   border-radius: 20px;
   transition: width 0.6s ease-in-out;
   display: flex;
@@ -124,12 +128,30 @@
 }
 
 // ✅ Barras individuales por tecnología
-.skills__html     { width: 90%; }
-.skills__css      { width: 90%; }
-.skills__js       { width: 60%; }
-.skills__react    { width: 50%; }
-.skills__git      { width: 60%; }
-.skills__bootstrap{ width: 60%; }
-.skills__firebase { width: 50%; }
-.skills__api      { width: 30%; }
-.skills__figma    { width: 80%; }
+.skills__html {
+  width: 90%;
+}
+.skills__css {
+  width: 90%;
+}
+.skills__js {
+  width: 60%;
+}
+.skills__react {
+  width: 50%;
+}
+.skills__git {
+  width: 60%;
+}
+.skills__bootstrap {
+  width: 60%;
+}
+.skills__firebase {
+  width: 50%;
+}
+.skills__api {
+  width: 30%;
+}
+.skills__figma {
+  width: 80%;
+}

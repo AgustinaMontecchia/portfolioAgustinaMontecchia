@@ -1,23 +1,23 @@
-// ===========================
-// 🌙 MODO OSCURO
-// ===========================
-
 body.dark-theme {
-  // 🎨 Paleta de colores principal
-  --first-color: hsl(315, 35%, 60%);
-  --first-color-second: hsl(315, 20%, 25%);
-  --first-color-alt: hsl(315, 25%, 45%);
-  --first-color-lighter: hsl(315, 35%, 75%);
+  // 🎨 Colores principales
+  --first-color: hsl(192, 20%, 65%);         // Azul grisáceo más claro
+  --first-color-alt: hsl(163, 35%, 55%);     // Verde menta claro (hover)
+  --first-color-light: hsl(42, 80%, 80%);    // Amarillo cálido tenue
+  --first-color-lighter: hsl(180, 40%, 85%); // Verde agua pastel claro
+  --first-color-second: #ffffff;
 
-  // 🌚 Colores de texto y fondo
-  --title-color: hsl(0, 0%, 95%);
-  --text-color: hsl(0, 0%, 75%);
-  --text-color-light: hsl(0, 0%, 60%);
-  --body-color: hsl(315, 15%, 12%);
-  --container-color: hsl(315, 15%, 16%);
-  --input-color: hsl(315, 15%, 20%);
+  // 🌚 Colores de fondo
+  --body-color: hsl(210, 15%, 10%);          // Casi negro con tinte azulado
+  --container-color: hsl(210, 15%, 14%);     // Un poco más claro que el fondo
+  --input-color: hsl(210, 15%, 18%);         // Campo sutilmente diferenciado
 
-  // 🎛️ Scroll personalizado
-  --scroll-bar-color: hsl(315, 15%, 30%);
-  --scroll-thumb-color: hsl(315, 25%, 75%);
+  // 🖋 Texto en modo oscuro
+  --title-color: hsl(0, 0%, 95%);            // Muy claro
+  --text-color: hsl(0, 0%, 75%);             // Gris claro
+  --text-color-light: hsl(0, 0%, 60%);       // Gris tenue para detalles
+
+  // 🎛 Scroll personalizado
+  --scroll-bar-color: var(--container-color);
+  --scroll-thumb-color: var(--first-color);
+  --scroll-thumb-hover: var(--first-color-alt);
 }

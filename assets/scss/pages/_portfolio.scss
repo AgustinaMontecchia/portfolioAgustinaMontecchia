@@ -51,7 +51,8 @@
   background-color: var(--first-color);
   color: var(--container-color);
   font-weight: $font-medium;
-  padding: clamp(0.6rem, 0.5rem + 0.5vw, 0.75rem) clamp(1rem, 0.8rem + 0.5vw, 1.25rem);
+  padding: clamp(0.6rem, 0.5rem + 0.5vw, 0.75rem)
+    clamp(1rem, 0.8rem + 0.5vw, 1.25rem);
   border-radius: $space-sm;
   font-size: var(--normal-font-size);
   transition: background-color 0.3s ease, transform 0.2s ease;

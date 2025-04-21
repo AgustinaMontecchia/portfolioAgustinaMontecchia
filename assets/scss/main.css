@@ -1,16 +1,19 @@
 @charset "UTF-8";
 :root {
-  --first-color: hsl(330, 65%, 85%);
-  --first-color-second: white;
-  --first-color-alt: hsl(275, 40%, 70%);
-  --first-color-light: hsl(305, 100%, 88%);
-  --first-color-lighter: hsl(49, 77%, 85%);
-  --body-color: hsl(30, 60%, 92%);
-  --container-color: hsl(220, 20%, 92%);
-  --input-color: hsl(175, 45%, 96%);
-  --title-color: hsl(175, 45%, 20%);
-  --text-color: hsl(20, 25%, 30%);
-  --text-color-light: hsl(175, 15%, 50%);
+  --first-color: hsl(192, 20%, 50%);
+  --first-color-alt: hsl(163, 35%, 45%);
+  --first-color-light: hsl(42, 80%, 88%);
+  --first-color-lighter: hsl(180, 40%, 92%);
+  --first-color-second: #ffffff;
+  --body-color: hsl(210, 30%, 97%);
+  --container-color: hsl(210, 25%, 99%);
+  --input-color: hsl(200, 30%, 94%);
+  --title-color: hsl(210, 15%, 20%);
+  --text-color: hsl(210, 10%, 30%);
+  --text-color-light: hsl(210, 10%, 50%);
+  --scroll-bar-color: var(--container-color); /* Fondo del track */
+  --scroll-thumb-color: var(--first-color); /* Color del thumb */
+  --scroll-thumb-hover: var(--first-color-alt); /* Hover del thumb */
   --body-font: "Nunito", sans-serif;
   --title-font: "Manrope", sans-serif;
   --big-font-size: clamp(1.5rem, 1.2rem + 2.5vw, 3rem);
@@ -1319,41 +1322,70 @@ img {
 }
 
 body.dark-theme {
-  --first-color: hsl(315, 35%, 60%);
-  --first-color-second: hsl(315, 20%, 25%);
-  --first-color-alt: hsl(315, 25%, 45%);
-  --first-color-lighter: hsl(315, 35%, 75%);
+  --first-color: hsl(192, 20%, 65%);
+  --first-color-alt: hsl(163, 35%, 55%);
+  --first-color-light: hsl(42, 80%, 80%);
+  --first-color-lighter: hsl(180, 40%, 85%);
+  --first-color-second: #ffffff;
+  --body-color: hsl(210, 15%, 10%);
+  --container-color: hsl(210, 15%, 14%);
+  --input-color: hsl(210, 15%, 18%);
   --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 75%);
   --text-color-light: hsl(0, 0%, 60%);
-  --body-color: hsl(315, 15%, 12%);
-  --container-color: hsl(315, 15%, 16%);
-  --input-color: hsl(315, 15%, 20%);
-  --scroll-bar-color: hsl(315, 15%, 30%);
-  --scroll-thumb-color: hsl(315, 25%, 75%);
+  --scroll-bar-color: var(--container-color);
+  --scroll-thumb-color: var(--first-color);
+  --scroll-thumb-hover: var(--first-color-alt);
 }
 
 body.agus-theme {
-  --first-color: #f28cc8;
-  --first-color-alt: #e667b0;
-  --first-color-second: #f8c8dc;
-  --first-color-lighter: #fdd6e6;
-  --title-color: #6e2142;
-  --text-color: #753d57;
-  --text-color-light: #9b5c7e;
-  --input-color: #fff0f6;
-  --body-color: #fff0f6;
-  --container-color: #fff7fb;
-  --scroll-bar-color: #fbcde3;
-  --scroll-thumb-color: #f28cc8;
+  --first-color: #ff4eb5;
+  --first-color-alt: #e637a0;
+  --first-color-second: #fff2fa;
+  --first-color-lighter: #ffe4f0;
+  --body-color: #fff0f8;
+  --container-color: #fff9fd;
+  --input-color: #ffe9f6;
+  --title-color: #9c266d;
+  --text-color: #b13a78;
+  --text-color-light: #d0659c;
+  --scroll-bar-color: #ffd1ec;
+  --scroll-thumb-color: #ff6fbf;
+  --scroll-thumb-hover: #ff90cb;
 }
 
-body.agus-theme .home {
-  background-image: url("https://www.transparenttextures.com/patterns/hearts.png");
-  background-size: cover;
+body.agus-theme::before {
+  content: "💖💫✨🌟💜";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-image: url("https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2764.png");
+  background-size: contain;
   background-repeat: repeat;
+  opacity: 0.05;
+  animation: floatHearts 20s linear infinite;
+  z-index: 1;
 }
 
+@keyframes sparkle {
+  0% {
+    background-position: 0 0, 25px 25px;
+  }
+  100% {
+    background-position: 100px 100px, 125px 125px;
+  }
+}
+@keyframes floatHearts {
+  from {
+    background-position-y: -100vh;
+  }
+  to {
+    background-position-y: 100vh;
+  }
+}
 .home.section {
   position: relative;
   background-color: var(--body-color);
@@ -2174,7 +2206,7 @@ body.agus-theme .home {
 }
 
 .project__bg {
-  background-color: var(--first-color-light);
+  background-color: var(--first-color-lighter);
   padding: clamp(0.25rem, 0.15rem + 0.5vw, 0.5rem);
   margin: clamp(0.25rem, 0.15rem + 0.5vw, 0.5rem);
   border-radius: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);

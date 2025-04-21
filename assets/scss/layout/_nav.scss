@@ -26,7 +26,7 @@
   padding: $space-xs;
 
   span {
-    white-space: nowrap; // ✅ evita el corte de línea
+    white-space: nowrap;
     font-size: var(--smaller-font-size);
     color: var(--text-color-light);
     line-height: 1;

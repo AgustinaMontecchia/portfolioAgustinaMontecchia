@@ -1,31 +1,57 @@
-// ==========================
-// 💖 MODO AGUS
-// ==========================
-
 body.agus-theme {
-  // 🎨 Paleta principal
-  --first-color: #f28cc8;
-  --first-color-alt: #e667b0;
-  --first-color-second: #f8c8dc;
-  --first-color-lighter: #fdd6e6;
+  // 🌈 Colores principales explosivos y vibrantes
+  --first-color: #ff4eb5;        
+  --first-color-alt: #e637a0;    
+  --first-color-second: #fff2fa; 
+  --first-color-lighter: #ffe4f0; 
 
-  // 📝 Tipografía y texto
-  --title-color: #6e2142;
-  --text-color: #753d57;
-  --text-color-light: #9b5c7e;
+  // ✨ Fondo de fantasía
+  --body-color: #fff0f8;          
+  --container-color: #fff9fd;     
+  --input-color: #ffe9f6;         
 
-  // 📦 Fondos
-  --input-color: #fff0f6;
-  --body-color: #fff0f6;
-  --container-color: #fff7fb;
+  // 🎀 Tipografía intensa
+  --title-color: #9c266d;         
+  --text-color: #b13a78;          
+  --text-color-light: #d0659c;    
 
-  // 🖱️ Scroll personalizado
-  --scroll-bar-color: #fbcde3;
-  --scroll-thumb-color: #f28cc8;
+  // 🎛 Scroll personalizado
+  --scroll-bar-color: #ffd1ec;
+  --scroll-thumb-color: #ff6fbf;
+  --scroll-thumb-hover: #ff90cb;
 }
 
-body.agus-theme .home {
-  background-image: url("https://www.transparenttextures.com/patterns/hearts.png");
-  background-size: cover;
+// 💖 Agregamos lluvia animada de corazones 
+body.agus-theme::before {
+  content: "💖💫✨🌟💜";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-image: url("https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2764.png"); // ❤️ en PNG
+  background-size: contain;
   background-repeat: repeat;
+  opacity: 0.05;
+  animation: floatHearts 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes sparkle {
+  0% {
+    background-position: 0 0, 25px 25px;
+  }
+  100% {
+    background-position: 100px 100px, 125px 125px;
+  }
+}
+
+@keyframes floatHearts {
+  from {
+    background-position-y: -100vh;
+  }
+  to {
+    background-position-y: 100vh;
+  }
 }

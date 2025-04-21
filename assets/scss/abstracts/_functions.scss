@@ -4,16 +4,10 @@
 
 // 📏 Convertir px a rem
 @function rem($px, $base: 16) {
-    @return ($px / $base) * 1rem;
-  }
-  
-  // 🎨 Modificar opacidad de un color
-  @function set-opacity($color, $opacity) {
-    @return rgba($color, $opacity);
-  }
-  
-  // 📐 Clamp general para tamaños fluidos (tipografía, paddings, gaps, etc.)
-  
-  
+  @return ($px / $base) * 1rem;
+}
 
-  
+// 🎨 Modificar opacidad de un color
+@function set-opacity($color, $opacity) {
+  @return rgba($color, $opacity);
+}
