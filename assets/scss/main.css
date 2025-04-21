@@ -1689,6 +1689,53 @@ body.agus-theme .home {
   margin-bottom: clamp(0.5rem, 0.3rem + 0.6vw, 1rem);
 }
 
+.value__card {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 180px;
+  height: 160px;
+  margin: 0 auto;
+}
+
+.value__card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.value__card:hover .value__card-inner {
+  transform: rotateY(180deg);
+}
+
+.value__card-front,
+.value__card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: var(--container-color);
+  backface-visibility: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.value__card-front {
+  z-index: 2;
+}
+
+.value__card-back {
+  transform: rotateY(180deg);
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+}
+
 .process__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
