@@ -22,12 +22,13 @@
   }
   // ===== NAVIGATION =====
   .nav {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     z-index: $z-fixed;
   }
+  
 
   .nav__logo {
     justify-self: center;
@@ -57,8 +58,11 @@
   }
 
   .nav__toggle {
-    display: block;
+    display: block !important;
+    z-index: $z-tooltip;
+    cursor: pointer;
   }
+  
 
   .nav__close {
     position: absolute;

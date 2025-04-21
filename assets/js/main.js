@@ -1,25 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
   /*==================== MENÚ ====================*/
   const navToggle = document.getElementById('nav-toggle'),
-        navMenu = document.getElementById('nav-menu'),
-        navClose = document.getElementById('nav-close');
+      navMenu = document.getElementById('nav-menu'),
+      navClose = document.getElementById('nav-close');
 
   const dropdown = document.querySelector('.nav__dropdown');
   const dropdownLink = dropdown?.querySelector('.nav__link');
   const submenu = dropdown?.querySelector('.nav__submenu');
   const arrow = dropdown?.querySelector('.nav__arrow');
 
+// ✅ Escucha tanto click como touchstart para asegurar compatibilidad en iPhone
   if (navToggle) {
-    navToggle.addEventListener('click', () => {
+  ['click', 'touchstart'].forEach(evt => {
+    navToggle.addEventListener(evt, e => {
+      e.preventDefault(); // previene errores en algunos navegadores móviles
       navMenu.classList.toggle('show-menu');
     });
+  });
   }
 
   if (navClose) {
-    navClose.addEventListener('click', () => {
+  ['click', 'touchstart'].forEach(evt => {
+    navClose.addEventListener(evt, e => {
+      e.preventDefault();
       navMenu.classList.remove('show-menu');
     });
+  });
   }
+
 
   document.querySelectorAll('.nav__link').forEach(link => {
     link.addEventListener('click', () => {
